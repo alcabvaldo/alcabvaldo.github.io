@@ -72,6 +72,81 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* top */
+
+#top {
+	color: #303030;
+
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+
+	-moz-justify-content: -moz-center;
+	-webkit-justify-content: -webkit-;
+	-ms-justify-content: -ms-center;
+	justify-content: center;
+
+	-moz-transition: opacity 1s ease, -moz-transform 1s ease;
+	-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+	-ms-transition: opacity 1s ease, -ms-transform 1s ease;
+	transition: opacity 1s ease, transform 1s ease;
+	
+	position: relative;
+	cursor: default;
+	text-align: center;
+	z-index: 1;
+}
+
+	#top.hidden {
+		pointer-events: none;
+		-moz-transform: 	translateY(2rem);
+		-webkit-transform: 	translateY(2rem);
+		-ms-transform: 		translateY(2rem);
+		transform: 			translateY(2rem);
+		-moz-transition: 	opacity 0.5s ease, -moz-transform 0.5s 		ease, visibility 0.5s;
+		-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s 	ease, visibility 0.5s;
+		-ms-transition: 	opacity 0.5s ease, -ms-transform 0.5s 		ease, visibility 0.5s;
+		transition: 		opacity 0.5s ease, transform 0.5s 			ease, visibility 0.5s;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+		#top.hidden + #work .logo {
+			-moz-transform: translateY(0);
+			-webkit-transform: translateY(0);
+			-ms-transform: translateY(0);
+			transform: translateY(0);
+			opacity: 1;
+			visibility: visible;
+		}
+
+	body.is-preload #top {
+		-moz-transform: translateY(2rem);
+		-webkit-transform: translateY(2rem);
+		-ms-transform: translateY(2rem);
+		transform: translateY(2rem);
+		opacity: 0;
+	}
+
+		body.is-preload #top:not(.hidden) + #work + #nav {
+			-moz-transform: translateY(4rem);
+			-webkit-transform: translateY(4rem);
+			-ms-transform: translateY(4rem);
+			transform: translateY(4rem);
+			opacity: 0;
+		}
+
 /* Basic */
 
 	html {
@@ -2105,7 +2180,6 @@ input, select, textarea {
 	}
 
 	#top {
-		padding: 10em 0 10em 0;
 		text-align: left;
 	}
 

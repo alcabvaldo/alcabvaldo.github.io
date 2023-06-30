@@ -8,7 +8,9 @@
 
 	var	$window = $(window),
 		$body = $('body'),
-		$nav = $('#nav');
+		$nav = $('#nav'),
+		$top = $('#top'),
+		$work = $('#work');
 
 	// Breakpoints.
 		breakpoints({
@@ -30,5 +32,62 @@
 			speed: 1000,
 			offset: function() { return $nav.height(); }
 		});
+
+	// Top.
+	if ($top.length > 0) {
+
+		// Hack: Fix flex min-height on IE.
+			if (browser.name == 'ie') {
+				$window.on('resize.ie-top-fix', function() {
+
+					var h = $top.height();
+
+					if (h > $window.height())
+						$top.css('height', 'auto');
+					else
+						$top.css('height', h);
+
+				}).trigger('resize.ie-top-fix');
+			}
+
+		// Hide top on scroll (> small).
+			breakpoints.on('>small', function() {
+
+				$work.unscrollex();
+
+				$work.scrollex({
+					mode: 'bottom',
+					top: '35vh',
+					bottom: '-50vh',
+					enter: function() {
+						$top.addClass('hidden');
+					},
+					leave: function() {
+						$top.removeClass('hidden');
+					}
+				});
+
+			});
+
+		// Hide top on scroll (<= small).
+			breakpoints.on('<=small', function() {
+
+				$work.unscrollex();
+
+				$work.scrollex({
+					mode: 'middle',
+					top: '15vh',
+					bottom: '-15vh',
+					enter: function() {
+						$top.addClass('hidden');
+					},
+					leave: function() {
+						$top.removeClass('hidden');
+					}
+				});
+
+		});
+
+	}
 
 })(jQuery);
