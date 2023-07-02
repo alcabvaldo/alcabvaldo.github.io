@@ -53,17 +53,17 @@
 		// Hide top on scroll (> small).
 			breakpoints.on('>small', function() {
 
-				$work.unscrollex();
+				$top.unscrollex();
 
-				$work.scrollex({
+				$top.scrollex({
 					mode: 'bottom',
 					top: '35vh',
 					bottom: '-50vh',
 					enter: function() {
-						$top.addClass('hidden');
+						$top.removeClass('hidden');
 					},
 					leave: function() {
-						$top.removeClass('hidden');
+						$top.addClass('hidden');
 					}
 				});
 
@@ -72,22 +72,32 @@
 		// Hide top on scroll (<= small).
 			breakpoints.on('<=small', function() {
 
-				$work.unscrollex();
+				$top.unscrollex();
 
-				$work.scrollex({
+				$top.scrollex({
 					mode: 'middle',
 					top: '15vh',
 					bottom: '-15vh',
 					enter: function() {
-						$top.addClass('hidden');
+						$top.removeClass('hidden');
 					},
 					leave: function() {
-						$top.removeClass('hidden');
+						$top.addClass('hidden');
 					}
 				});
 
 		});
 
 	}
+
+	// Scrollex for work images
+	$work.scrollex({
+		scroll: function(progress) {
+	
+		  // Progressively increase #foobar's opacity as we scroll through it.
+			$(this).css('opacity', Math.max(0, Math.min(1, progress +0.5)));
+	
+		}
+	  });
 
 })(jQuery);
