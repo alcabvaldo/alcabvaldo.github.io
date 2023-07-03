@@ -81,14 +81,14 @@ input, select, textarea {
 
 /* top */
 
-	#top {
+	.fadeIn {
 		-moz-transition: opacity 1s ease, -moz-transform 1s ease;
 		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
 		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
 		transition: opacity 1s ease, transform 1s ease;
 	}
 
-		#top.hidden {
+		.fadeIn.hidden {
 			pointer-events: none;
 			-moz-transform: 	translateY(2rem);
 			-webkit-transform: 	translateY(2rem);
@@ -102,7 +102,7 @@ input, select, textarea {
 			visibility: hidden;
 		}
 
-		body.is-preload #top {
+		body.is-preload .fadeIn {
 			-moz-transform: translateY(2rem);
 			-webkit-transform: translateY(2rem);
 			-ms-transform: translateY(2rem);
@@ -110,7 +110,7 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-			body.is-preload #top:not(.hidden) + #work + #nav {
+			body.is-preload .fadeIn:not(.hidden) {
 				-moz-transform: translateY(4rem);
 				-webkit-transform: translateY(4rem);
 				-ms-transform: translateY(4rem);

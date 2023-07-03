@@ -11,6 +11,7 @@
 		$nav = $('#nav'),
 		$top = $('#top'),
 		$work = $('#work');
+		$fadeIn = $('.fadeIn');
 
 	// Breakpoints.
 		breakpoints({
@@ -33,56 +34,56 @@
 			offset: function() { return $nav.height(); }
 		});
 
-	// Top.
-	if ($top.length > 0) {
+	// fadeIn.
+	if ($fadeIn.length > 0) {
 
 		// Hack: Fix flex min-height on IE.
 			if (browser.name == 'ie') {
 				$window.on('resize.ie-top-fix', function() {
 
-					var h = $top.height();
+					var h = $fadeIn.height();
 
 					if (h > $window.height())
-						$top.css('height', 'auto');
+						$fadeIn.css('height', 'auto');
 					else
-						$top.css('height', h);
+						$fadeIn.css('height', h);
 
 				}).trigger('resize.ie-top-fix');
 			}
 
-		// Hide top on scroll (> small).
+		// Hide element on scroll (> small).
 			breakpoints.on('>small', function() {
 
-				$top.unscrollex();
+				$fadeIn.unscrollex();
 
-				$top.scrollex({
+				$fadeIn.scrollex({
 					mode: 'bottom',
 					top: '35vh',
 					bottom: '-50vh',
 					enter: function() {
-						$top.removeClass('hidden');
+						$fadeIn.removeClass('hidden');
 					},
 					leave: function() {
-						$top.addClass('hidden');
+						$fadeIn.addClass('hidden');
 					}
 				});
 
 			});
 
-		// Hide top on scroll (<= small).
+		// Hide element on scroll (<= small).
 			breakpoints.on('<=small', function() {
 
-				$top.unscrollex();
+				$fadeIn.unscrollex();
 
-				$top.scrollex({
+				$fadeIn.scrollex({
 					mode: 'middle',
 					top: '15vh',
 					bottom: '-15vh',
 					enter: function() {
-						$top.removeClass('hidden');
+						$fadeIn.removeClass('hidden');
 					},
 					leave: function() {
-						$top.addClass('hidden');
+						$fadeIn.addClass('hidden');
 					}
 				});
 
