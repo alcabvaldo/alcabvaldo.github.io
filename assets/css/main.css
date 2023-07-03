@@ -72,12 +72,45 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* colors */
+	
+:root {
+	--bold-color: #7ed6ff;
+	--transparent: rgba(0, 0, 0, 0);
+}
 /* utils */
+
+	#contact {
+		padding:  2em 0 2em 0;
+	}
+
+	.gradient-text {
+		text-shadow: -1px -1px 0px rgba(0, 0, 0, 0);
+		background-color: #f3ec78;
+		background-image: linear-gradient(-45deg, #78f3ca, #4256af);
+		background-size: 100%;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-webkit-text-fill-color: transparent; 
+		-moz-text-fill-color: transparent;
+	}
 
 	.verticalLine {
 		border-left: thick solid #00b460;
 	}
 
+	.blackAndWhite {
+		animation: in-out 2s ease-in-out;
+	}
+	
+	@keyframes in-out {
+		0% {
+			filter: grayscale(100%);
+		}
+		100% {
+			filter: grayscale(0%);
+		}
+	}
 
 /* top */
 
