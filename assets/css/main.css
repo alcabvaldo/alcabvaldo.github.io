@@ -2060,7 +2060,7 @@ input, select, textarea {
 			text-shadow: -1px -1px 0px #181818;
 		}
 
-			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
+			.wrapper.style4 strong, .wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
 				color: #fff;
 			}
 
@@ -2368,10 +2368,6 @@ input, select, textarea {
 					ul.social li a {
 						top: 0 !important;
 					}
-
-						ul.social li a:before {
-							background-color: transparent !important;
-						}
 
 		/* Actions */
 
