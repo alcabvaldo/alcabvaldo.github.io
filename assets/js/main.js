@@ -91,14 +91,4 @@
 
 	}
 
-	// Scrollex for work images
-	$work.scrollex({
-		scroll: function(progress) {
-	
-		  // Progressively increase #foobar's opacity as we scroll through it.
-			$(this).css('opacity', Math.max(0, Math.min(1, progress +0.5)));
-	
-		}
-	  });
-
 })(jQuery);
