@@ -1,13 +1,17 @@
 ---
-// Navigation component
+// Navigation component - loads all content from data files
+import { navigationData } from '../data/index.js';
+
+// Get only active menu items
+const activeMenuItems = navigationData.mainMenu.filter(item => item.active);
 ---
 
-<nav id="nav">
-  <ul class="container">
-    <li><a href="#top">Top</a></li>
-    <!-- Future sections can be uncommented here -->
-    <!-- <li><a href="#work">Work</a></li> -->
-    <!-- <li><a href="#portfolio">Portfolio</a></li> -->
-    <li><a href="#contact">Contact</a></li>
+<nav id={navigationData.navId}>
+  <ul class={navigationData.containerClass}>
+    {activeMenuItems.map(item => (
+      <li><a href={item.href}>{item.label}</a></li>
+    ))}
+    <!-- Future sections can be added by updating navigationData.mainMenu -->
+    <!-- Currently available but inactive: {navigationData.futureMenuItems.map(item => `${item.label}: ${item.href}`).join(', ')} -->
   </ul>
 </nav>

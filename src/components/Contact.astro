@@ -1,50 +1,55 @@
 ---
-// Contact section component
-const contactInfo = {
-  email: "alejandrocabralvaldovinos@gmail.com",
-  socialLinks: [
-    {
-      name: "GitHub",
-      url: "https://github.com/alcabvaldo",
-      icon: "fa-github",
-      label: "Github"
-    },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/alejandro-nicolas-cabral-valdovinos-8253a9186/0",
-      icon: "fa-linkedin-in", 
-      label: "LinkedIn"
-    },
-    {
-      name: "Twitter",
-      url: "https://twitter.com/alcabvaldo",
-      icon: "fa-twitter",
-      label: "Twitter"
-    },
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/ale_cabr4l/",
-      icon: "fa-instagram",
-      label: "Instagram"
-    }
-  ]
-};
+// Contact section component - loads all content from data files
+import { contactData, themeConfig, socialLinks } from '../data/index.js';
 ---
 
-<article id="contact" class="wrapper style4">
-  <div class="container medium" data-sal="fade" data-sal-duration="600">
-    <a href={`mailto:${contactInfo.email}`} class="button large scrolly" data-sal="zoom-in" data-sal-delay="200" data-sal-duration="500">Contact</a>
+<article id={contactData.sectionId} class={contactData.wrapperClass}>
+  <div 
+    class={contactData.containerClass} 
+    data-sal={themeConfig.animations.contact.container.animation} 
+    data-sal-duration={themeConfig.animations.contact.container.duration}
+  >
+    <a 
+      href={`mailto:${contactData.email}`} 
+      class="button large scrolly" 
+      data-sal={themeConfig.animations.contact.button.animation} 
+      data-sal-delay={themeConfig.animations.contact.button.delay} 
+      data-sal-duration={themeConfig.animations.contact.button.duration}
+    >
+      {contactData.buttonText}
+    </a>
     <footer>
-      <h3 class="gradient-text" data-sal="slide-up" data-sal-delay="300" data-sal-duration="400">Find me on ...</h3>
-      <ul class="social" data-sal="slide-up" data-sal-delay="400" data-sal-duration="500">
-        {contactInfo.socialLinks.map(link => (
+      <h3 
+        class={themeConfig.classes.gradientText} 
+        data-sal={themeConfig.animations.contact.title.animation} 
+        data-sal-delay={themeConfig.animations.contact.title.delay} 
+        data-sal-duration={themeConfig.animations.contact.title.duration}
+      >
+        {contactData.title}
+      </h3>
+      <ul 
+        class="social" 
+        data-sal={themeConfig.animations.contact.social.animation} 
+        data-sal-delay={themeConfig.animations.contact.social.delay} 
+        data-sal-duration={themeConfig.animations.contact.social.duration}
+      >
+        {socialLinks.all.map(link => (
           <li><a href={link.url} class={`icon brands ${link.icon}`}><span class="label">{link.label}</span></a></li>
         ))}
       </ul>
-      <hr data-sal="slide-up" data-sal-delay="500" data-sal-duration="300">
-      <ul id="copyright" data-sal="fade" data-sal-delay="600" data-sal-duration="400">
-        <li>&copy; Untitled. All rights reserved.</li>
-        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      <hr 
+        data-sal={themeConfig.animations.contact.hr.animation} 
+        data-sal-delay={themeConfig.animations.contact.hr.delay} 
+        data-sal-duration={themeConfig.animations.contact.hr.duration}
+      >
+      <ul 
+        id="copyright" 
+        data-sal={themeConfig.animations.contact.copyright.animation} 
+        data-sal-delay={themeConfig.animations.contact.copyright.delay} 
+        data-sal-duration={themeConfig.animations.contact.copyright.duration}
+      >
+        <li set:html={contactData.footer.copyright}></li>
+        <li>{contactData.footer.attribution.text} <a href={contactData.footer.attribution.url}>{contactData.footer.attribution.linkText}</a></li>
       </ul>
     </footer>
   </div>
