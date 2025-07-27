@@ -1,9 +1,19 @@
 ---
+// Layout component - loads all configuration from data files
+import { siteConfig, scripts } from '../data/index.js';
+
 export interface Props {
-  title: string;
+  title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { 
+  title = siteConfig.title,
+  description = siteConfig.description 
+} = Astro.props;
+
+// Get SAL.js configuration
+const salConfig = scripts.external.find(lib => lib.name === "SAL.js");
 ---
 
 <!DOCTYPE HTML>
@@ -12,41 +22,52 @@ const { title } = Astro.props;
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang={siteConfig.language}>
   <head>
     <title>{title}</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
-    <!-- SAL.js CSS for scroll animations -->
-    <link rel="stylesheet" href="https://unpkg.com/sal.js@0.8.5/dist/sal.css">
+    <meta charset={siteConfig.charset} />
+    <meta name="viewport" content={siteConfig.viewport} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={siteConfig.keywords.join(', ')} />
+    <meta name="author" content={siteConfig.author} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteConfig.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={siteConfig.url + siteConfig.ogImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content={siteConfig.twitterCard} />
+    <meta property="twitter:url" content={siteConfig.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={siteConfig.url + siteConfig.ogImage} />
+    
+    <!-- Stylesheets -->
+    {scripts.stylesheets.map(stylesheet => (
+      <link rel="stylesheet" href={stylesheet.href} />
+    ))}
+    
+    <link rel="icon" type={siteConfig.faviconType} href={siteConfig.favicon}>
   </head>
   <body class="is-preload">
     <slot />
     
-    <!-- Scripts - Exact copy from current site -->
-    <script is:inline src="/assets/js/jquery.min.js"></script>
-    <script is:inline src="/assets/js/jquery.scrolly.min.js"></script>
-    <script is:inline src="/assets/js/jquery.scrollex.min.js"></script>
-    <script is:inline src="/assets/js/browser.min.js"></script>
-    <script is:inline src="/assets/js/breakpoints.min.js"></script>
-    <script is:inline src="/assets/js/util.js"></script>
-    <script is:inline src="/assets/js/main.js"></script>
+    <!-- Core Scripts -->
+    {scripts.core.map(script => (
+      <script is:inline src={script.src}></script>
+    ))}
     
-    <!-- SAL.js for enhanced scroll animations -->
-    <script is:inline src="https://unpkg.com/sal.js@0.8.5/dist/sal.js"></script>
-    <script is:inline>
-      // Initialize SAL.js alongside existing jQuery animations
-      document.addEventListener('DOMContentLoaded', function() {
-        if (typeof sal !== 'undefined') {
-          sal({
-            threshold: 0.2,
-            once: true,
-            duration: 600
-          });
-        }
-      });
-    </script>
+    <!-- External Libraries -->
+    {scripts.external.map(library => (
+      <script is:inline src={library.js}></script>
+    ))}
+    
+    <!-- SAL.js Initialization -->
+    {salConfig && (
+      <script is:inline set:html={salConfig.initCode}></script>
+    )}
   </body>
 </html>
