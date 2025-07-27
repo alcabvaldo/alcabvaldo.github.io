@@ -1,0 +1,50 @@
+---
+// Hero section component with personal information
+const personalInfo = {
+  name: "Alejandro Cabral",
+  role: "Software Developer",
+  description: "I'm a Software Developer, currently studying Computer Sciente at FP-UNA.",
+  university: {
+    name: "FP-UNA",
+    url: "https://www.pol.una.py/"
+  },
+  socialLinks: [
+    {
+      name: "GitHub",
+      url: "https://github.com/alcabvaldo",
+      icon: "fa-github",
+      label: "Github"
+    },
+    {
+      name: "LinkedIn", 
+      url: "https://www.linkedin.com/in/alejandro-nicolas-cabral-valdovinos-8253a9186/",
+      icon: "fa-linkedin-in",
+      label: "LinkedIn"
+    }
+  ]
+};
+---
+
+<article class="wrapper style4">
+  <div id="top" class="container fadeIn" data-sal="fade" data-sal-duration="800">
+    <div class="row">
+      <div class="col-4 col-5-large col-12-medium">
+        <span class="image fit blackAndWhite" data-sal="slide-right" data-sal-delay="200" data-sal-duration="600">
+          <img src="/images/programmer.jpg" alt="Computer with code" />
+        </span>
+      </div>
+      <div class="col-8 col-7-large col-12-medium" data-sal="slide-left" data-sal-delay="400" data-sal-duration="600">
+        <header>
+          <h1>Hi. I'm <strong class="gradient-text">{personalInfo.name}</strong></h1>
+        </header>
+        <p>I'm a <strong>{personalInfo.role}</strong>, currently studying Computer Sciente at <a href={personalInfo.university.url}>{personalInfo.university.name}</a>.</p>
+        &nbsp
+        <ul class="social" data-sal="slide-up" data-sal-delay="600" data-sal-duration="400">
+          {personalInfo.socialLinks.map(link => (
+            <li><a href={link.url} class={`icon brands ${link.icon}`}><span class="label">{link.label}</span></a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>

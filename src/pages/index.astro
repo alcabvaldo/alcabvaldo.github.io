@@ -1,61 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <Layout title="Alejandro Cabral - Portfolio">
-  <!-- Nav - Exact copy from current index.html -->
-  <nav id="nav">
-    <ul class="container">
-      <li><a href="#top">Top</a></li>
-      <!-- Work and Portfolio commented out as in original -->
-      <!-- <li><a href="#work">Work</a></li>
-      <li><a href="#portfolio">Portfolio</a></li> -->
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Home - Enhanced with SAL.js animations -->
-  <article class="wrapper style4">
-    <div id="top" class="container fadeIn" data-sal="fade" data-sal-duration="800">
-      <div class="row">
-        <div class="col-4 col-5-large col-12-medium">
-          <span class="image fit blackAndWhite" data-sal="slide-right" data-sal-delay="200" data-sal-duration="600">
-            <img src="/images/programmer.jpg" alt="Computer with code" />
-          </span>
-        </div>
-        <div class="col-8 col-7-large col-12-medium" data-sal="slide-left" data-sal-delay="400" data-sal-duration="600">
-          <header>
-            <h1>Hi. I'm <strong class="gradient-text">Alejandro Cabral</strong></h1>
-          </header>
-          <p>I'm a <strong>Software Developer</strong>, currently studying Computer Sciente at <a href="https://www.pol.una.py/">FP-UNA</a>.</p>
-          &nbsp
-          <ul class="social" data-sal="slide-up" data-sal-delay="600" data-sal-duration="400">
-            <li><a href="https://github.com/alcabvaldo" class="icon brands fa-github"><span class="label">Github</span></a></li>
-            <li><a href="https://www.linkedin.com/in/alejandro-nicolas-cabral-valdovinos-8253a9186/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Contact - Enhanced with SAL.js animations -->
-  <article id="contact" class="wrapper style4">
-    <div class="container medium" data-sal="fade" data-sal-duration="600">
-      <a href="mailto:alejandrocabralvaldovinos@gmail.com" class="button large scrolly" data-sal="zoom-in" data-sal-delay="200" data-sal-duration="500">Contact</a>
-      <footer>
-        <h3 class="gradient-text" data-sal="slide-up" data-sal-delay="300" data-sal-duration="400">Find me on ...</h3>
-        <ul class="social" data-sal="slide-up" data-sal-delay="400" data-sal-duration="500">
-          <li><a href="https://github.com/alcabvaldo" class="icon brands fa-github"><span class="label">Github</span></a></li>
-          <li><a href="https://www.linkedin.com/in/alejandro-nicolas-cabral-valdovinos-8253a9186/0" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-          <li><a href="https://twitter.com/alcabvaldo" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="https://www.instagram.com/ale_cabr4l/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        </ul>
-        <hr data-sal="slide-up" data-sal-delay="500" data-sal-duration="300">
-        <ul id="copyright" data-sal="fade" data-sal-delay="600" data-sal-duration="400">
-          <li>&copy; Untitled. All rights reserved.</li>
-          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-        </ul>
-      </footer>
-    </div>
-  </article>
+  <Navigation />
+  <Hero />
+  <Contact />
 </Layout>
