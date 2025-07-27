@@ -7,7 +7,9 @@
       "Bash(npm run build:*)",
       "Bash(timeout 10 npm run dev)",
       "Bash(mv:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run preview:*)"
     ],
     "deny": []
   }

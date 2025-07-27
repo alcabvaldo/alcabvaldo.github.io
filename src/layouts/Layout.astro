@@ -35,15 +35,17 @@ const { title } = Astro.props;
     <script is:inline src="/assets/js/main.js"></script>
     
     <!-- SAL.js for enhanced scroll animations -->
-    <script src="https://unpkg.com/sal.js@0.8.5/dist/sal.js"></script>
+    <script is:inline src="https://unpkg.com/sal.js@0.8.5/dist/sal.js"></script>
     <script is:inline>
       // Initialize SAL.js alongside existing jQuery animations
       document.addEventListener('DOMContentLoaded', function() {
-        sal({
-          threshold: 0.2,
-          once: true,
-          duration: 600
-        });
+        if (typeof sal !== 'undefined') {
+          sal({
+            threshold: 0.2,
+            once: true,
+            duration: 600
+          });
+        }
       });
     </script>
   </body>
