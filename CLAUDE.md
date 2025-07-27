@@ -47,25 +47,62 @@ This is a static portfolio website for Alejandro Cabral built using the HTML5 UP
 ### CSS Development
 - Modify SCSS files in `assets/sass/` rather than editing `main.css` directly
 - Main entry point is `assets/sass/main.scss`
-- Compile SCSS to CSS using a Sass processor
+- Component styles are in `assets/sass/_components.scss`
 - Variables and mixins are in `assets/sass/libs/`
+- Compile SCSS to CSS using: `npm run build:css`
+- Watch for changes: `npm run watch:css`
+
+### JavaScript Development
+- Main application logic is in `assets/js/app.js`
+- Content configuration is in `assets/js/content.js`
+- Theme configuration is in `assets/js/palette.js`
+- All content is loaded dynamically from these configuration files
+
+### Development Commands
+```bash
+npm run dev          # Start development server with live reload
+npm run build:css    # Compile SCSS to CSS
+npm run watch:css    # Watch SCSS changes and auto-compile
+npm run lint:css     # Lint SCSS files
+npm run format       # Format HTML/JS files
+```
 
 ### Content Updates
-- Main content is in `index.html`
-- Some sections are commented out (Work, Education, Portfolio) but can be uncommented and customized
-- Social media links and contact information are in the Contact section
+- **Dynamic Content**: All content is loaded from `assets/js/content.js`
+- **Personal Information**: Update personal details, contact info, and bio in the `CONTENT.personal` object
+- **Skills & Experience**: Modify the `CONTENT.skills` and `CONTENT.experience` objects
+- **Portfolio Projects**: Add/edit projects in the `CONTENT.portfolio.projects` array
+- **Blog Articles**: Manage articles in the `CONTENT.blog.articles` array
+- **Social Links**: Update social media links in the `CONTENT.social` array
+
+### Theme Customization
+- **Color Themes**: Multiple built-in themes in `assets/js/palette.js`
+- **Theme Switching**: Users can switch between light/dark themes
+- **Custom Themes**: Add new themes to the `PALETTE.themes` object
+- **CSS Variables**: All colors use CSS custom properties for easy theming
 
 ### Image Management
-- Profile and project images go in the `images/` directory
-- Favicon is `images/favicon.svg`
-- Ensure images are optimized for web use
+- **Profile Images**: Main profile photo in `images/` directory
+- **Project Images**: Portfolio project screenshots in `images/projects/`
+- **Blog Images**: Article featured images in `images/blog/`
+- **Favicon**: Site favicon is `images/favicon.svg`
+- **Image Optimization**: Use `npm run optimize:images` to optimize all images
+
+### Document Management
+- **Resume/CV**: Downloadable PDF resume in `assets/documents/`
+- **File Path**: Configure resume path in `CONTENT.personal.resumePDF`
 
 ## Key Features
-- **Smooth scrolling navigation**: Implemented with jquery.scrolly
-- **Fade-in animations**: Elements with `.fadeIn` class animate on load
-- **Black and white image effects**: Custom CSS animations for profile image
-- **Gradient text effects**: Applied to name and headings
-- **Social media integration**: Links to GitHub, LinkedIn, Twitter, Instagram
+- **Dynamic Content Loading**: All content loaded from JavaScript configuration files
+- **Multi-theme Support**: Light, dark, ocean, and sunset themes with automatic switching
+- **Responsive Design**: Mobile-first approach with multiple breakpoints
+- **Professional Sections**: Home, About, Skills, Experience, Portfolio, Education, Blog, Contact
+- **Interactive Elements**: Smooth scrolling, fade-in animations, hover effects
+- **SEO Optimized**: Meta tags, structured data, and semantic HTML
+- **Contact Form**: Working contact form with validation
+- **Portfolio Filtering**: Filter projects by category
+- **Theme Persistence**: User theme preference saved in localStorage
+- **Print Styles**: Optimized for printing/PDF generation
 
 ## GitHub Pages Deployment
 This repository is configured for GitHub Pages deployment. Any changes pushed to the main branch will automatically deploy to the live site.

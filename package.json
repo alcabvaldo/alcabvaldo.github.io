@@ -1,0 +1,30 @@
+{
+  "name": "alcabvaldo-portfolio",
+  "version": "1.0.0",
+  "description": "Alejandro Cabral's portfolio website",
+  "scripts": {
+    "dev": "live-server --port=8080 --open=index.html",
+    "build:css": "sass assets/sass/main.scss assets/css/main.css --style=compressed",
+    "watch:css": "sass --watch assets/sass/main.scss:assets/css/main.css",
+    "build": "npm run build:css && npm run optimize:images",
+    "optimize:images": "imagemin images/**/*.{jpg,jpeg,png,gif,svg} --out-dir=images/optimized",
+    "lint:css": "stylelint assets/sass/**/*.scss",
+    "format": "prettier --write *.html assets/js/*.js",
+    "serve": "http-server -p 8080 -o"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "prettier": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alcabvaldo/alcabvaldo.github.io.git"
+  },
+  "homepage": "https://alcabvaldo.github.io"
+}

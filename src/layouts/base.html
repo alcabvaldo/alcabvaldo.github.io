@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>{{title}} | Alejandro Cabral - Full-Stack Developer</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="full-stack developer, web developer, React, Node.js, JavaScript, TypeScript, Paraguay developer">
+    <meta name="author" content="Alejandro Cabral">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{title}} | Alejandro Cabral">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:image" content="https://alcabvaldo.github.io/public/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://alcabvaldo.github.io{{path}}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{title}} | Alejandro Cabral">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:image" content="https://alcabvaldo.github.io/public/assets/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/public/assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="/public/assets/images/favicon.svg">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/public/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/src/js/core/app.js" as="script">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/public/assets/css/main.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://alcabvaldo.github.io#person",
+        "name": "Alejandro Cabral",
+        "jobTitle": "Full-Stack Developer",
+        "description": "Full-stack developer specializing in React, Node.js, and modern web technologies",
+        "url": "https://alcabvaldo.github.io",
+        "image": "https://alcabvaldo.github.io/public/assets/images/profile.jpg",
+        "sameAs": [
+            "https://github.com/alcabvaldo",
+            "https://www.linkedin.com/in/alejandro-nicolas-cabral-valdovinos-8253a9186/",
+            "https://twitter.com/alcabvaldo"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Paraguay",
+            "addressLocality": "Asunción"
+        },
+        "alumniOf": {
+            "@type": "Organization",
+            "name": "Universidad Nacional de Asunción",
+            "sameAs": "https://www.una.py/"
+        },
+        "knowsAbout": [
+            "JavaScript", "TypeScript", "React", "Node.js", 
+            "Web Development", "Full-Stack Development", "Software Engineering"
+        ],
+        "knowsLanguage": ["Spanish", "English"]
+    }
+    </script>
+    
+    {{additionalHead}}
+</head>
+<body class="{{bodyClass}}">
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav id="main-nav" class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="/" class="brand-link" aria-label="Home">
+                    <span class="brand-text">AC</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link" data-page="home">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <span>Home</span>
+                    </a></li>
+                    <li><a href="/about" class="nav-link" data-page="about">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <span>About</span>
+                    </a></li>
+                    <li><a href="/portfolio" class="nav-link" data-page="portfolio">
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
+                        <span>Portfolio</span>
+                    </a></li>
+                    <li><a href="/resume" class="nav-link" data-page="resume">
+                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                        <span>Resume</span>
+                    </a></li>
+                    <li><a href="/blog" class="nav-link" data-page="blog">
+                        <i class="fas fa-blog" aria-hidden="true"></i>
+                        <span>Blog</span>
+                    </a></li>
+                    <li><a href="/contact" class="nav-link" data-page="contact">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        {{content}}
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/alcabvaldo" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/alejandro-nicolas-cabral-valdovinos-8253a9186/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/alcabvaldo" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:alejandrocabralvaldovinos@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/resume">Resume</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Latest</h3>
+                    <div class="footer-update">
+                        <p>Available for new opportunities</p>
+                        <span class="status-indicator available"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alejandro Cabral. All rights reserved.</p>
+                <p>Built with passion and modern web technologies.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    
+    <!-- Core Scripts -->
+    <script src="/src/js/core/config.js"></script>
+    <script src="/src/js/utils/helpers.js"></script>
+    <script src="/src/js/core/router.js"></script>
+    <script src="/src/js/core/theme.js"></script>
+    <script src="/src/js/core/app.js"></script>
+    
+    <!-- Page Specific Scripts -->
+    {{scripts}}
+    
+    <!-- Analytics (Development) -->
+    <!-- Production: Add Google Analytics or preferred analytics -->
+    
+    {{additionalScripts}}
+</body>
+</html>
