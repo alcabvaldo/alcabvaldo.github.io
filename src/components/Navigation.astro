@@ -1,17 +1,137 @@
 ---
-// Navigation component - loads all content from data files
+// Modern Navigation - floating, minimal design
 import { navigationData } from '../data/index.js';
 
 // Get only active menu items
 const activeMenuItems = navigationData.mainMenu.filter(item => item.active);
 ---
 
-<nav id={navigationData.navId}>
-  <ul class={navigationData.containerClass}>
-    {activeMenuItems.map(item => (
-      <li><a href={item.href}>{item.label}</a></li>
-    ))}
-    <!-- Future sections can be added by updating navigationData.mainMenu -->
-    <!-- Currently available but inactive: {navigationData.futureMenuItems.map(item => `${item.label}: ${item.href}`).join(', ')} -->
-  </ul>
+<nav class="main-navigation">
+  <div class="nav-container">
+    <!-- Brand/Logo -->
+    <div class="nav-brand">
+      <a href="#top" class="brand-link">
+        <span class="brand-initial">A</span>
+        <span class="brand-name">Alejandro</span>
+      </a>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+      <ul class="nav-list">
+        {activeMenuItems.map(item => (
+          <li class="nav-item">
+            <a href={item.href} class="nav-link">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="nav-cta">
+      <a href="#contact" class="nav-cta-button">
+        <span class="cta-icon">💬</span>
+        Let's Talk
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-toggle" aria-label="Toggle navigation menu">
+      <span class="toggle-line"></span>
+      <span class="toggle-line"></span>
+      <span class="toggle-line"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-content">
+      <ul class="mobile-nav-list">
+        {activeMenuItems.map(item => (
+          <li class="mobile-nav-item">
+            <a href={item.href} class="mobile-nav-link">
+              {item.label}
+            </a>
+          </li>
+        ))}
+        <li class="mobile-nav-item">
+          <a href="#contact" class="mobile-nav-cta">
+            Let's Talk
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
+<style>
+  @import '../styles/components/navigation.css';
+</style>
+
+<script>
+  // Simple mobile menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.mobile-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const body = document.body;
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = mobileMenu?.classList.contains('active');
+      
+      if (isOpen) {
+        mobileMenu?.classList.remove('active');
+        toggle?.classList.remove('active');
+        body.style.overflow = '';
+      } else {
+        mobileMenu?.classList.add('active');
+        toggle?.classList.add('active');
+        body.style.overflow = 'hidden';
+      }
+    });
+
+    // Close menu when clicking on links
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.remove('active');
+        toggle?.classList.remove('active');
+        body.style.overflow = '';
+      });
+    });
+
+    // Add active states for navigation
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    
+    const updateActiveLink = () => {
+      const currentSection = getCurrentSection();
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentSection) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    };
+
+    const getCurrentSection = () => {
+      const sections = document.querySelectorAll('section[id], article[id]');
+      let current = '#top';
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 100) {
+          current = `#${section.id}`;
+        }
+      });
+      
+      return current;
+    };
+
+    // Update active link on scroll
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+  });
+</script>

@@ -7,6 +7,11 @@ import { navigationData } from './content/navigation.js';
 import { heroData } from './content/hero.js';
 import { contactData } from './content/contact.js';
 import { socialLinks } from './content/social.js';
+import { aboutData } from './content/about.js';
+import { skillsData } from './content/skills.js';
+import { portfolioData } from './content/portfolio.js';
+import { workData } from './content/work.js';
+import { educationData } from './content/education.js';
 import { images } from './assets/images.js';
 import { scripts } from './assets/scripts.js';
 
@@ -19,6 +24,11 @@ export {
   heroData,
   contactData,
   socialLinks,
+  aboutData,
+  skillsData,
+  portfolioData,
+  workData,
+  educationData,
   images,
   scripts
 };
@@ -32,6 +42,11 @@ export default {
   hero: heroData,
   contact: contactData,
   social: socialLinks,
+  about: aboutData,
+  skills: skillsData,
+  portfolio: portfolioData,
+  work: workData,
+  education: educationData,
   images,
   scripts
 }; 

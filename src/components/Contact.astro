@@ -1,56 +1,154 @@
 ---
-// Contact section component - loads all content from data files
-import { contactData, themeConfig, socialLinks } from '../data/index.js';
+// Modern Contact & Footer section - professional and branded
+import { contactData, socialLinks } from '../data/index.js';
+import Button from './ui/Button.astro';
+import Card from './ui/Card.astro';
 ---
 
-<article id={contactData.sectionId} class={contactData.wrapperClass}>
-  <div 
-    class={contactData.containerClass} 
-    data-sal={themeConfig.animations.contact.container.animation} 
-    data-sal-duration={themeConfig.animations.contact.container.duration}
-  >
-    <a 
-      href={`mailto:${contactData.email}`} 
-      class="button large scrolly" 
-      data-sal={themeConfig.animations.contact.button.animation} 
-      data-sal-delay={themeConfig.animations.contact.button.delay} 
-      data-sal-duration={themeConfig.animations.contact.button.duration}
-    >
-      {contactData.buttonText}
-    </a>
-    <footer>
-      <h3 
-        class={themeConfig.classes.gradientText} 
-        data-sal={themeConfig.animations.contact.title.animation} 
-        data-sal-delay={themeConfig.animations.contact.title.delay} 
-        data-sal-duration={themeConfig.animations.contact.title.duration}
-      >
-        {contactData.title}
-      </h3>
-      <ul 
-        class="social" 
-        data-sal={themeConfig.animations.contact.social.animation} 
-        data-sal-delay={themeConfig.animations.contact.social.delay} 
-        data-sal-duration={themeConfig.animations.contact.social.duration}
-      >
-        {socialLinks.all.map(link => (
-          <li><a href={link.url} class={`icon brands ${link.icon}`}><span class="label">{link.label}</span></a></li>
-        ))}
-      </ul>
-      <hr 
-        data-sal={themeConfig.animations.contact.hr.animation} 
-        data-sal-delay={themeConfig.animations.contact.hr.delay} 
-        data-sal-duration={themeConfig.animations.contact.hr.duration}
-      >
-      <ul 
-        id="copyright" 
-        data-sal={themeConfig.animations.contact.copyright.animation} 
-        data-sal-delay={themeConfig.animations.contact.copyright.delay} 
-        data-sal-duration={themeConfig.animations.contact.copyright.duration}
-      >
-        <li set:html={contactData.footer.copyright}></li>
-        <li>{contactData.footer.attribution.text} <a href={contactData.footer.attribution.url}>{contactData.footer.attribution.linkText}</a></li>
-      </ul>
+<article id={contactData.sectionId} class="contact-section">
+  <div class="contact-container">
+    <!-- Background Elements -->
+    <div class="contact-background">
+      <div class="contact-pattern"></div>
+      <div class="contact-gradient"></div>
+    </div>
+
+    <!-- Contact Content -->
+    <div class="contact-content">
+      <!-- Contact Header -->
+      <div class="contact-header">
+        <h2 class="contact-title">Let's Work Together</h2>
+        <p class="contact-subtitle">
+          Ready to bring your project to life? I'm available for freelance work and exciting opportunities.
+        </p>
+      </div>
+
+      <!-- Contact Cards -->
+      <div class="contact-cards">
+        <!-- Email Card -->
+        <Card variant="feature" class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-card-content">
+            <h3>Send me an email</h3>
+            <p>I typically respond within 24 hours</p>
+            <a href={`mailto:${contactData.email}`} class="contact-link">
+              {contactData.email}
+            </a>
+          </div>
+        </Card>
+
+        <!-- Calendar Card -->
+        <Card variant="feature" class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="contact-card-content">
+            <h3>Schedule a call</h3>
+            <p>Let's discuss your project in detail</p>
+            <a href={`mailto:${contactData.email}?subject=Project Discussion`} class="contact-link">
+              Book a meeting
+            </a>
+          </div>
+        </Card>
+
+        <!-- Location Card -->
+        <Card variant="feature" class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-card-content">
+            <h3>Based in Paraguay</h3>
+            <p>Available for remote work worldwide</p>
+            <span class="contact-info">UTC-3 timezone</span>
+          </div>
+        </Card>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="contact-cta">
+        <h3>Ready to get started?</h3>
+        <p>Drop me a line and let's create something amazing together.</p>
+        <div class="cta-buttons">
+          <Button variant="primary" size="large" href={`mailto:${contactData.email}`}>
+            <span class="btn-icon">✉️</span>
+            Send Message
+          </Button>
+          <Button variant="secondary" size="large" href={`mailto:${contactData.email}?subject=Project Inquiry`}>
+            <span class="btn-icon">💼</span>
+            Discuss Project
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <!-- Footer Main -->
+        <div class="footer-main">
+          <div class="footer-brand">
+            <h3 class="brand-name gradient-text">Alejandro Cabral</h3>
+            <p class="brand-tagline">Building digital experiences with modern technology</p>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-section">
+              <h4>Navigation</h4>
+              <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#work">Experience</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h4>Technologies</h4>
+              <ul>
+                <li><a href="#skills">JavaScript</a></li>
+                <li><a href="#skills">Python</a></li>
+                <li><a href="#skills">React</a></li>
+                <li><a href="#skills">Astro</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h4>Connect</h4>
+              <div class="footer-social">
+                {socialLinks.all.map(link => (
+                  <a href={link.url} class={`footer-social-link icon brands ${link.icon}`} target="_blank" rel="noopener">
+                    <span class="sr-only">{link.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-info">
+            <p>&copy; {new Date().getFullYear()} Alejandro Cabral. All rights reserved.</p>
+            <p>Built with <span class="heart">❤️</span> using Astro and modern web technologies.</p>
+          </div>
+          
+          <div class="footer-meta">
+            <span class="status-indicator">
+              <span class="status-dot"></span>
+              Available for work
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Pattern -->
+      <div class="footer-pattern"></div>
     </footer>
   </div>
 </article>
+
+<style>
+  @import '../styles/sections/contact.css';
+</style>

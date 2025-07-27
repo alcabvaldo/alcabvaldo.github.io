@@ -5,16 +5,21 @@ export const heroData = {
   wrapperClass: "wrapper style4",
   
   // Text content - all text fragments
-  greeting: "Hi. I'm",
+  greeting: "Hi, I'm",
   name: "Alejandro Cabral",
   role: "Software Developer",
+  subtitle: "Computer Science Student & Aspiring Developer",
   
   // Description text fragments
-  rolePrefix: "I'm a",
-  roleIntroduction: ", currently studying Computer Sciente at",
+  rolePrefix: "I'm a passionate",
+  roleIntroduction: " currently studying Computer Science at",
   
   // Complete description (alternative to fragments)
-  fullDescription: "I'm a Software Developer, currently studying Computer Sciente at FP-UNA.",
+  fullDescription: "I'm a passionate Software Developer currently studying Computer Science at FP-UNA, focused on creating innovative solutions and learning cutting-edge technologies.",
+  
+  // Additional professional info
+  tagline: "Building the future, one line of code at a time",
+  location: "Paraguay",
   
   // University information
   university: {

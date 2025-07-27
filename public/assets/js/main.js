@@ -10,6 +10,10 @@
 		$body = $('body'),
 		$nav = $('#nav'),
 		$top = $('#top'),
+		$about = $('#about'),
+		$skills = $('#skills'),
+		$projects = $('#projects'),
+		$contact = $('#contact'),
 		$work = $('#work');
 		$fadeIn = $('.fadeIn');
 

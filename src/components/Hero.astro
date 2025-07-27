@@ -1,48 +1,143 @@
 ---
-// Hero section component - loads all content from data files
+// Modern Hero section - unified design with the rest of the site
 import { heroData, themeConfig, socialLinks } from '../data/index.js';
+import Button from './ui/Button.astro';
+
+// Prepare description with university link
+const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${heroData.roleIntroduction} <a href="${heroData.university.url}" class="university-link">${heroData.university.name}</a>.`;
 ---
 
-<article class={heroData.wrapperClass}>
-  <div 
-    id={heroData.sectionId} 
-    class={heroData.layout.containerClass} 
-    data-sal={themeConfig.animations.hero.container.animation} 
-    data-sal-duration={themeConfig.animations.hero.container.duration}
-  >
-    <div class="row">
-      <div class={heroData.layout.imageColumn}>
-        <span 
-          class={heroData.image.class} 
-          data-sal={themeConfig.animations.hero.image.animation} 
-          data-sal-delay={themeConfig.animations.hero.image.delay} 
-          data-sal-duration={themeConfig.animations.hero.image.duration}
-        >
-          <img src={heroData.image.src} alt={heroData.image.alt} />
-        </span>
+<article class="hero-section">
+  <div class="hero-container">
+    <!-- Background Elements -->
+    <div class="hero-background">
+      <div class="hero-mesh"></div>
+      <div class="hero-particles"></div>
+    </div>
+
+    <!-- Main Hero Content -->
+    <div class="hero-main">
+      <div class="hero-content">
+        <!-- Status Badge -->
+        <div class="status-badge">
+          <div class="status-dot"></div>
+          <span>Available for projects</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="hero-title">
+          <span class="greeting">{heroData.greeting}</span>
+          <span class="name gradient-text">{heroData.name}</span>
+          <span class="role-text">{heroData.subtitle}</span>
+        </h1>
+
+        <!-- Description -->
+        <div class="hero-description">
+          <p class="description-main" set:html={description}></p>
+          <p class="tagline">{heroData.tagline}</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="hero-actions">
+          <Button variant="primary" size="large" href="#projects">
+            <span class="btn-icon">🚀</span>
+            View My Work
+          </Button>
+          <Button variant="secondary" size="large" href="#contact">
+            <span class="btn-icon">💼</span>
+            Hire Me
+          </Button>
+        </div>
+
+        <!-- Social Links -->
+        <div class="hero-social">
+          <span class="social-intro">Connect with me</span>
+          <div class="social-links">
+            {socialLinks.primary.map(link => (
+              <a href={link.url} class={`social-link ${link.icon}`} target="_blank" rel="noopener">
+                <span class="sr-only">{link.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
-      <div 
-        class={heroData.layout.contentColumn} 
-        data-sal={themeConfig.animations.hero.content.animation} 
-        data-sal-delay={themeConfig.animations.hero.content.delay} 
-        data-sal-duration={themeConfig.animations.hero.content.duration}
-      >
-        <header>
-          <h1>{heroData.greeting} <strong class={themeConfig.classes.gradientText}>{heroData.name}</strong></h1>
-        </header>
-        <p>{heroData.rolePrefix} <strong>{heroData.role}</strong>{heroData.roleIntroduction} <a href={heroData.university.url}>{heroData.university.name}</a>.</p>
-        &nbsp
-        <ul 
-          class="social" 
-          data-sal={themeConfig.animations.hero.social.animation} 
-          data-sal-delay={themeConfig.animations.hero.social.delay} 
-          data-sal-duration={themeConfig.animations.hero.social.duration}
-        >
-          {socialLinks.primary.map(link => (
-            <li><a href={link.url} class={`icon brands ${link.icon}`}><span class="label">{link.label}</span></a></li>
-          ))}
-        </ul>
+
+      <!-- Hero Visual Element -->
+      <div class="hero-visual">
+        <div class="visual-card windows-terminal">
+          <div class="card-header">
+            <div class="window-controls windows-style">
+              <span class="control minimize">−</span>
+              <span class="control maximize">□</span>
+              <span class="control close">×</span>
+            </div>
+            <span class="card-title">Command Prompt - C:\Users\Alejandro</span>
+          </div>
+          <div class="card-content terminal-content">
+            <div class="terminal-prompt">
+              <span class="prompt-path">C:\Users\Alejandro></span>
+              <span class="prompt-command">node developer.js</span>
+            </div>
+            <div class="code-block">
+              <div class="code-line">
+                <span class="code-keyword">const</span>
+                <span class="code-variable">developer</span> = {`{`}
+              </div>
+              <div class="code-line indent">
+                <span class="code-property">  name:</span>
+                <span class="code-string">"Alejandro Cabral"</span>,
+              </div>
+              <div class="code-line indent">
+                <span class="code-property">  skills:</span>
+                <span class="code-array">["JavaScript", "Python", "React"]</span>,
+              </div>
+              <div class="code-line indent">
+                <span class="code-property">  passion:</span>
+                <span class="code-string">"Building amazing experiences"</span>,
+              </div>
+              <div class="code-line indent">
+                <span class="code-property">  available:</span>
+                <span class="code-boolean">true</span>
+              </div>
+              <div class="code-line">{`}`};</div>
+              <div class="code-line">
+                <span class="code-comment">// Ready to build amazing projects!</span>
+              </div>
+            </div>
+            <div class="terminal-cursor"></div>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-cards">
+          <div class="stat-card">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">8+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-text">Scroll to explore</div>
+      <div class="scroll-arrow">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </div>
 </article>
+
+<style>
+  @import '../styles/sections/hero.css';
+</style>

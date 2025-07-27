@@ -29,6 +29,67 @@ export const themeConfig = {
       }
     },
     
+    about: {
+      container: {
+        animation: "fade",
+        duration: 800
+      },
+      title: {
+        animation: "slide-up",
+        delay: 100,
+        duration: 600
+      },
+      content: {
+        animation: "fade",
+        delay: 300,
+        duration: 600
+      },
+      highlights: {
+        animation: "zoom-in",
+        delay: 400,
+        duration: 500
+      }
+    },
+    
+    skills: {
+      container: {
+        animation: "fade",
+        duration: 800
+      },
+      category: {
+        animation: "slide-right",
+        delay: 200,
+        duration: 600
+      },
+      skillItem: {
+        animation: "fade",
+        delay: 300,
+        duration: 500
+      },
+      progressBar: {
+        animation: "slide-right",
+        delay: 400,
+        duration: 800
+      }
+    },
+    
+    projects: {
+      container: {
+        animation: "fade",
+        duration: 800
+      },
+      projectCard: {
+        animation: "zoom-in",
+        delay: 300,
+        duration: 600
+      },
+      stats: {
+        animation: "slide-up",
+        delay: 200,
+        duration: 500
+      }
+    },
+    
     contact: {
       container: {
         animation: "fade",

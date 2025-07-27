@@ -3,8 +3,28 @@ export const navigationData = {
   // Main navigation menu items
   mainMenu: [
     {
-      label: "Top",
+      label: "Home",
       href: "#top",
+      active: true
+    },
+    {
+      label: "About",
+      href: "#about",
+      active: true
+    },
+    {
+      label: "Skills",
+      href: "#skills",
+      active: true
+    },
+    {
+      label: "Projects",
+      href: "#projects",
+      active: true
+    },
+    {
+      label: "Work",
+      href: "#work",
       active: true
     },
     {
@@ -17,13 +37,8 @@ export const navigationData = {
   // Future sections that are currently commented out
   futureMenuItems: [
     {
-      label: "Work",
-      href: "#work",
-      active: false
-    },
-    {
-      label: "Portfolio",
-      href: "#portfolio", 
+      label: "Blog",
+      href: "#blog", 
       active: false
     }
   ],
