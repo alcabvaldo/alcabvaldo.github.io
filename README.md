@@ -1,29 +1,37 @@
-# Astro Starter Kit: Minimal
+# Alejandro Cabral - Portfolio Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A modern portfolio website built with **Astro** and enhanced with scroll animations. Originally based on the HTML5 UP "Miniport" template, migrated to a component-based architecture for better maintainability and development experience.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🌐 **Live Site**: [alcabvaldo.github.io](https://alcabvaldo.github.io)
+
+## ✨ Features
+
+- **Modern Architecture**: Built with Astro for fast, static site generation
+- **Smooth Animations**: SAL.js for performant scroll animations
+- **Component-Based**: Reusable, maintainable Astro components
+- **Responsive Design**: Mobile-first approach with SCSS breakpoints
+- **SEO Optimized**: Static generation for fast loading and search visibility
+- **Developer Experience**: Hot reload, TypeScript support, modern build tools
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
 ```text
 /
-├── public/
 ├── src/
+│   ├── components/          # Reusable Astro components
+│   │   ├── Navigation.astro # Site navigation
+│   │   ├── Hero.astro      # Hero section with personal info
+│   │   └── Contact.astro   # Contact section with social links
+│   ├── layouts/
+│   │   └── Layout.astro    # Main HTML structure and scripts
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       └── index.astro     # Main page composition
+├── public/                 # Static assets
+│   ├── assets/            # CSS, JS, fonts (preserved from original)
+│   └── images/            # Profile and project images
+├── docs/                  # Documentation and implementation plans
+└── dist/                  # Built static files (generated)
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
