@@ -1,0 +1,17 @@
+---
+// Main page - loads configuration from data files
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Contact from '../components/Contact.astro';
+import { siteConfig } from '../data/index.js';
+---
+
+<Layout 
+  title={siteConfig.title}
+  description={siteConfig.description}
+>
+  <Navigation />
+  <Hero />
+  <Contact />
+</Layout>
