@@ -55,10 +55,10 @@ export const workData = {
       id: "etica-software-developer",
       company: "e-Tica",
       position: "Software Developer",
-      duration: "March 2024 - Present",
+      duration: "March 2024 - September 2024",
       location: "Paraguay",
       type: "Full-time",
-      status: "current",
+      status: "completed",
       
       description: "Backend software developer focusing on Java Spring applications with Oracle database connectivity. Responsible for API development, process automation, and production deployment validation.",
       
@@ -115,7 +115,7 @@ export const workData = {
       ],
       
       achievements: [
-        "Awarded CPK Scholarship for academic excellence",
+        "Awarded CPK Scholarship",
         "Successfully completed cybersecurity and ethical hacking curriculum",
         "Gained international experience and cross-cultural collaboration skills",
         "Contributed to STEM education outreach programs"
@@ -191,7 +191,6 @@ export const workData = {
       ],
       
       achievements: [
-        "Built and deployed multiple web applications",
         "Gained proficiency in modern web development frameworks",
         "Developed strong understanding of responsive design principles",
         "Created maintainable and scalable code architectures"

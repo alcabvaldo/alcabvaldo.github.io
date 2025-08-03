@@ -184,7 +184,7 @@ export const certificationsData = {
       url: "https://linktr.ee/ComitePyKansas",
       category: "Academic Achievement",
       
-      description: "Prestigious scholarship awarded for academic excellence, funding international exchange program at Wichita State University.",
+      description: "Scholarship awarded by BECAL and Paraguay-Kansas Committee, funding international exchange program at Wichita State University.",
       
       achievements: [
         "Selected based on academic merit and leadership potential",

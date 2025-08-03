@@ -17,32 +17,38 @@ export const aboutData = {
     {
       title: "Data Engineering Expertise",
       description: "Professional Data Engineer with Databricks certifications, specializing in Apache Spark, ETL pipelines, and cloud-based data processing",
-      icon: "fa-database"
+      icon: "fa-database",
+      image: "/images/highlights/data-engineering.jpg"
     },
     {
       title: "International Experience",
       description: "Working remotely for Canadian companies while studying in Paraguay. Exchange program at Wichita State University funded by CPK Scholarship",
-      icon: "fa-globe"
+      icon: "fa-globe",
+      image: "/images/highlights/international.jpg"
     },
     {
       title: "Academic Excellence",
       description: "Maintaining GPA of 4.57/5.00 in Computer Engineering at FP-UNA, served as student instructor for C programming",
-      icon: "fa-graduation-cap"
+      icon: "fa-graduation-cap",
+      image: "/images/highlights/academic.jpg"
     },
     {
       title: "Backend Development",
       description: "Production experience with Java Spring, Oracle databases, RESTful APIs, and automated deployment processes",
-      icon: "fa-server"
+      icon: "fa-server",
+      image: "/images/highlights/backend.jpg"
     },
     {
       title: "Process Automation",
       description: "Created Python scripts and Bash automation that reduced deployment steps by 80%, improving operational efficiency",
-      icon: "fa-cogs"
+      icon: "fa-cogs",
+      image: "/images/highlights/automation.jpg"
     },
     {
       title: "Cybersecurity Knowledge",
       description: "Studied Ethical Hacking and Cybersecurity at Wichita State, participated in CTF challenges and digital forensics",
-      icon: "fa-shield-alt"
+      icon: "fa-shield-alt",
+      image: "/images/highlights/cybersecurity.jpg"
     }
   ],
   

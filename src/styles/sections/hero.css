@@ -214,9 +214,6 @@
   width: 100%;
 }
 
-.social-links .email-copy-btn {
-  order: -1;
-}
 
 .social-links .social-platforms {
   display: flex;
@@ -285,6 +282,29 @@
   border-color: var(--color-success) !important;
 }
 
+/* Reset button styles for social links */
+button.social-link-button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  text-shadow: none;
+  background-image: none;
+}
+
+/* Specific reset for email button to override any global styles */
+button#copyEmailBtn {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  background-image: none !important;
+  border-image: none !important;
+}
+
 /* New social link button styles */
 .social-link-button {
   display: inline-flex;
@@ -306,6 +326,10 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
 }
 
 .social-link-button::before {
@@ -344,12 +368,32 @@
   font-size: var(--font-sm);
 }
 
+.social-links .email-copy-btn {
+  order: -1;
+}
+
 /* Email copy button specific styles */
 .email-copy-btn {
   background: var(--bg-secondary) !important;
   border: 1px solid var(--border-light) !important;
   width: 100%;
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-shadow: none !important;
+}
+
+.email-copy-btn:focus {
+  outline: none;
+  /* border: 1px solid var(--border-light) !important; */
+  box-shadow: none;
+}
+
+.email-copy-btn:active {
+  /* border: 5px solid var(--border-light) !important; */
+  box-shadow: none;
 }
 
 .email-copy-btn .link-text {
@@ -360,7 +404,6 @@
   text-overflow: ellipsis;
   font-weight: var(--font-medium);
 }
-
 .email-copy-btn:hover {
   background: var(--color-primary) !important;
   border-color: var(--color-primary) !important;
