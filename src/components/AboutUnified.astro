@@ -1193,6 +1193,19 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     // Update on resize
     window.addEventListener('resize', updateActiveNav);
     
+    // Cleanup function for event listeners
+    function cleanup() {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateActiveNav);
+      if (observer) {
+        sections.forEach(section => observer.unobserve(section));
+        observer.disconnect();
+      }
+    }
+    
+    // Store cleanup function for potential future use
+    window.aboutUnifiedCleanup = cleanup;
+    
     // Scroll indicator functionality
     const scrollIndicator = document.querySelector('.scroll-indicator');
     

@@ -475,5 +475,13 @@ import LanguageSelector from './ui/LanguageSelector.astro';
     // Update active link on scroll
     window.addEventListener('scroll', updateActiveLink);
     updateActiveLink();
+    
+    // Cleanup function for event listeners
+    function cleanup() {
+      window.removeEventListener('scroll', updateActiveLink);
+    }
+    
+    // Store cleanup function for potential future use
+    window.navigationCleanup = cleanup;
   });
 </script>

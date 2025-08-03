@@ -155,7 +155,10 @@ export function initThemePicker(): void {
   const themeOptions = document.querySelectorAll('[data-theme-option]') as NodeListOf<HTMLButtonElement>;
 
   if (!themeToggle || !themeDropdown || !themeOptions.length) {
-    console.warn('Theme picker elements not found');
+    // Only warn in development
+    if (import.meta.env.DEV) {
+      console.warn('Theme picker elements not found');
+    }
     return;
   }
 
@@ -233,7 +236,10 @@ export function initLanguagePicker(): void {
   const currentLanguage = document.querySelector('[data-current-language]') as HTMLElement;
 
   if (!languageToggle || !languageDropdown || !languageOptions.length) {
-    console.warn('Language picker elements not found');
+    // Only warn in development
+    if (import.meta.env.DEV) {
+      console.warn('Language picker elements not found');
+    }
     return;
   }
 
@@ -292,7 +298,10 @@ export function initMobileNavigation(): void {
   const mobileNavLinks = document.querySelectorAll('[data-mobile-nav-link]') as NodeListOf<HTMLAnchorElement>;
 
   if (!mobileToggle || !mobileMenu) {
-    console.warn('Mobile navigation elements not found');
+    // Only warn in development
+    if (import.meta.env.DEV) {
+      console.warn('Mobile navigation elements not found');
+    }
     return;
   }
 

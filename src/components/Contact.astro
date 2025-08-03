@@ -33,7 +33,7 @@ import Card from './ui/Card.astro';
           <div class="contact-card-content">
             <h3>Send me an email</h3>
             <p>I typically respond within 24 hours</p>
-            <button onclick="window.openContactModal?.()" class="contact-link-btn">
+            <button class="contact-link-btn contact-modal-trigger">
               {contactData.email}
             </button>
           </div>
@@ -47,7 +47,7 @@ import Card from './ui/Card.astro';
           <div class="contact-card-content">
             <h3>Schedule a call</h3>
             <p>Let's discuss your project in detail</p>
-            <button onclick="window.openContactModal?.()" class="contact-link-btn">
+            <button class="contact-link-btn contact-modal-trigger">
               Book a meeting
             </button>
           </div>
@@ -71,11 +71,11 @@ import Card from './ui/Card.astro';
         <h3>Ready to get started?</h3>
         <p>Drop me a line and let's create something amazing together.</p>
         <div class="cta-buttons">
-          <button onclick="window.openContactModal?.()" class="btn btn-primary btn-large">
+          <button class="btn btn-primary btn-large contact-modal-trigger">
             <span class="btn-icon">✉️</span>
             Send Message
           </button>
-          <button onclick="window.openContactModal?.()" class="btn btn-secondary btn-large">
+          <button class="btn btn-secondary btn-large contact-modal-trigger">
             <span class="btn-icon">💼</span>
             Discuss Project
           </button>
@@ -152,3 +152,17 @@ import Card from './ui/Card.astro';
 <style>
   @import '../styles/sections/contact.css';
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactModalTriggers = document.querySelectorAll('.contact-modal-trigger');
+    
+    contactModalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        if (typeof window.openContactModal === 'function') {
+          window.openContactModal();
+        }
+      });
+    });
+  });
+</script>

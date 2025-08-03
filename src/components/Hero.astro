@@ -43,7 +43,7 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
             <span class="btn-icon">🚀</span>
             View My Work
           </Button>
-          <button onclick="window.openContactModal?.()" class="btn btn-secondary btn-large">
+          <button class="btn btn-secondary btn-large contact-modal-trigger">
             <span class="btn-icon">💼</span>
             Get In Touch
           </button>
@@ -144,7 +144,9 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const contactModalTrigger = document.querySelector('.contact-modal-trigger');
     
+    // Copy email functionality
     if (copyEmailBtn) {
       copyEmailBtn.addEventListener('click', async function() {
         const email = 'alejandrocabralvaldovinos@gmail.com';
@@ -192,6 +194,13 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
             this.querySelector('.link-text').textContent = originalText;
           }, 2000);
         }
+      });
+    }
+    
+    // Contact modal trigger
+    if (contactModalTrigger && typeof window.openContactModal === 'function') {
+      contactModalTrigger.addEventListener('click', function() {
+        window.openContactModal();
       });
     }
   });
