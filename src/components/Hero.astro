@@ -127,9 +127,15 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
             <span class="stat-number">Data</span>
             <span class="stat-label">Engineering</span>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">Available</span>
-            <span class="stat-label">Remotely</span>
+          <div class="stat-card time-card">
+            <div class="hero-time-display" id="heroParaguayTime">
+              <span class="time-stat">--:--</span>
+              <span class="time-label">Paraguay</span>
+            </div>
+          </div>
+          <div class="stat-card remote-card">
+            <span class="stat-number">🌍</span>
+            <span class="stat-label">Remote Ready</span>
           </div>
         </div>
       </div>
@@ -205,5 +211,38 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
         window.openContactModal();
       });
     }
+
+    // Hero Paraguay time display
+    function updateHeroParaguayTime() {
+      const heroTime = document.getElementById('heroParaguayTime');
+      if (heroTime) {
+        const timeDisplay = heroTime.querySelector('.time-stat');
+        
+        if (timeDisplay) {
+          const now = new Date();
+          
+          // Paraguay timezone - America/Asuncion (simplified for hero display)
+          const paraguayTime = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'America/Asuncion',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+          }).format(now);
+          
+          timeDisplay.textContent = paraguayTime;
+        }
+      }
+    }
+
+    // Update hero time immediately and then every minute (less frequent for hero)
+    updateHeroParaguayTime();
+    const heroTimeInterval = setInterval(updateHeroParaguayTime, 60000); // Update every minute
+
+    // Store cleanup function
+    window.heroTimeCleanup = () => {
+      if (heroTimeInterval) {
+        clearInterval(heroTimeInterval);
+      }
+    };
   });
 </script>

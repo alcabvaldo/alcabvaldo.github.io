@@ -462,7 +462,7 @@ button#copyEmailBtn {
 /* Stats Cards */
 .stats-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
   width: 100%;
   max-width: 420px;
@@ -500,6 +500,86 @@ button#copyEmailBtn {
   font-weight: var(--font-medium);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
+}
+
+/* Hero Time Display */
+.time-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-time-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.time-stat {
+  display: block;
+  font-size: var(--font-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary) !important;
+  margin-bottom: var(--space-xs);
+  line-height: 1;
+  font-family: 'Consolas', 'Monaco', monospace;
+  letter-spacing: 1px;
+}
+
+.time-label {
+  display: block;
+  font-size: var(--font-sm);
+  color: var(--text-secondary) !important;
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.time-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(var(--color-primary-rgb, 59, 130, 246), 0.1), transparent);
+  transition: left 2s ease-in-out;
+}
+
+.time-card:hover::before {
+  left: 100%;
+}
+
+/* Remote Work Card */
+.remote-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.remote-card .stat-number {
+  font-size: var(--font-2xl);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.remote-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(var(--color-success-rgb, 16, 185, 129), 0.1), transparent);
+  transition: left 2s ease-in-out;
+}
+
+.remote-card:hover::before {
+  left: 100%;
+}
+
+.remote-card:hover {
+  border-color: var(--color-success) !important;
 }
 
 /* Hero Visual */

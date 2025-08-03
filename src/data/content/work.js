@@ -47,7 +47,8 @@ export const workData = {
       companyInfo: {
         website: "https://www.linkedin.com/company/40891205/",
         industry: "Data Engineering",
-        size: "Technology Company"
+        size: "Technology Company",
+        logo: "/images/logos/stoicfinch_logo.jpg"
       }
     },
     
@@ -86,7 +87,8 @@ export const workData = {
       companyInfo: {
         website: "https://eko.com.py",
         industry: "Software Development",
-        size: "Technology Company"
+        size: "Technology Company",
+        logo: "/images/logos/eticapy_logo.jpg"
       }
     },
     
@@ -124,7 +126,8 @@ export const workData = {
       companyInfo: {
         website: "https://www.wichita.edu",
         industry: "Higher Education",
-        size: "University"
+        size: "University",
+        logo: "/images/logos/wichita_state_university_logo.jpg"
       }
     },
     
@@ -162,7 +165,8 @@ export const workData = {
       companyInfo: {
         website: "https://www.pol.una.py/",
         industry: "Higher Education", 
-        size: "University"
+        size: "University",
+        logo: "/images/logos/una_py_logo.jpg"
       }
     },
     

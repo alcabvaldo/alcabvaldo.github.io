@@ -21,6 +21,7 @@ export const certificationsData = {
       status: "active", // active, expired
       credentialUrl: "https://credentials.databricks.com/338f2867-d22a-4892-be9c-251cb928e914",
       category: "Data Engineering",
+      logo: "/images/logos/databricks_logo.jpg",
       
       description: "Professional certification validating expertise in data engineering using Databricks platform, Apache Spark, and cloud-based data processing.",
       
@@ -41,6 +42,7 @@ export const certificationsData = {
       status: "active",
       credentialUrl: "https://credentials.databricks.com/1dae1481-a3ee-4214-a35a-9dc904c7a4f9",
       category: "Data Engineering",
+      logo: "/images/logos/databricks_logo.jpg",
       
       description: "Certification demonstrating proficiency in developing applications using Apache Spark and PySpark for large-scale data processing.",
       
@@ -61,6 +63,7 @@ export const certificationsData = {
       status: "active",
       credentialUrl: "https://www.credly.com/badges/55251470-4517-4f86-a457-939dc6835d95/linked_in_profile",
       category: "Project Management",
+      logo: "/images/logos/scrum_org_logo.jpg",
       
       description: "Industry-recognized certification demonstrating fundamental knowledge of Scrum framework and agile project management principles.",
       
@@ -83,6 +86,7 @@ export const certificationsData = {
       status: "active",
       credentialUrl: "https://www.efset.org/cert/d3Yz9k",
       category: "Language",
+      logo: "/images/logos/efset_logo.jpg",
       
       description: "Internationally recognized English proficiency certification demonstrating advanced C2 level competency in professional and academic contexts.",
       
@@ -103,6 +107,7 @@ export const certificationsData = {
       status: "active",
       credentialUrl: "https://www.linkedin.com/learning/certificates/3535be6eac08d32e6b285cbf531807d3112263aec69bcc46c6968403017dd9c1",
       category: "Programming",
+      logo: "/images/logos/linkedin_logo.jpg",
       
       description: "Comprehensive training covering Python programming fundamentals, data structures, and best practices for professional development.",
       
@@ -123,6 +128,7 @@ export const certificationsData = {
       status: "active",
       credentialUrl: "https://www.linkedin.com/learning/certificates/eeb4780998a12f0342108c28ec3bd71d39f413141aff54c64be422c6ee65f793",
       category: "Machine Learning",
+      logo: "/images/logos/linkedin_logo.jpg",
       
       description: "Foundational knowledge in machine learning concepts, algorithms, and practical applications in AI development.",
       
@@ -183,6 +189,7 @@ export const certificationsData = {
       status: "completed",
       url: "https://linktr.ee/ComitePyKansas",
       category: "Academic Achievement",
+      logo: "/images/logos/cpk_logo.jpg",
       
       description: "Scholarship awarded by BECAL and Paraguay-Kansas Committee, funding international exchange program at Wichita State University.",
       
