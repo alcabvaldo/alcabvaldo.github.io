@@ -48,26 +48,6 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
             Get In Touch
           </button>
         </div>
-
-        <!-- Social Links -->
-        <div class="hero-social">
-          <span class="social-intro">Connect with me</span>
-          <div class="social-links">
-            <!-- Copy Email Button -->
-            <button id="copyEmailBtn" class="social-link-button email-copy-btn" aria-label="Copy email to clipboard">
-              <i class="fas fa-copy"></i>
-              <span class="link-text">alejandrocabralvaldovinos@gmail.com</span>
-            </button>
-            
-            <!-- Social Media Links -->
-            {socialLinks.primary.filter(link => link.icon !== 'fa-envelope').map(link => (
-              <a href={link.url} class="social-link-button" target="_blank" rel="noopener">
-                <i class={`fab ${link.icon}`}></i>
-                <span class="link-text">{link.name}</span>
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
 
       <!-- Hero Visual Element -->
@@ -130,6 +110,26 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
             <span class="stat-number">8+</span>
             <span class="stat-label">Projects</span>
           </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="hero-social">
+        <span class="social-intro">Connect with me</span>
+        <div class="social-links">
+          <!-- Copy Email Button -->
+          <button id="copyEmailBtn" class="social-link-button email-copy-btn" aria-label="Copy email to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="link-text">alejandrocabralvaldovinos@gmail.com</span>
+          </button>
+          
+          <!-- Social Media Links -->
+          {socialLinks.primary.filter(link => link.icon !== 'fa-envelope').map(link => (
+            <a href={link.url} class="social-link-button" target="_blank" rel="noopener">
+              <i class={`fab ${link.icon}`}></i>
+              <span class="link-text">{link.name}</span>
+            </a>
+          ))}
         </div>
       </div>
     </div>
