@@ -1,0 +1,23 @@
+---
+// About Me page - comprehensive portfolio sections
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import AboutSection from '../components/About.astro';
+import SkillsSection from '../components/Skills.astro';
+import ProjectsSection from '../components/Projects.astro';
+import WorkSection from '../components/Work.astro';
+import ContactSection from '../components/Contact.astro';
+import { siteConfig } from '../data/index.js';
+---
+
+<Layout 
+  title={`About Me - ${siteConfig.title}`}
+  description="Learn more about Alejandro Cabral - Computer Science student, skills, projects, and professional experience"
+>
+  <Navigation />
+  <AboutSection />
+  <SkillsSection />
+  <ProjectsSection />
+  <WorkSection />
+  <ContactSection />
+</Layout> 

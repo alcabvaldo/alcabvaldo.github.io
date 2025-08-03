@@ -3,107 +3,89 @@ export const skillsData = {
   // Section configuration
   sectionId: "skills",
   title: "Technical Skills",
-  subtitle: "Programming Languages, Frameworks & Tools",
+  subtitle: "Data Engineering, Backend Development & Programming Technologies",
   
   // Skill categories
   categories: [
     {
-      name: "Programming Languages",
+      name: "Data Engineering & Analytics",
       skills: [
         {
-          name: "JavaScript",
+          name: "Apache Spark",
           proficiency: "Expert",
-          yearsExperience: "3+",
-          description: "Modern ES6+, DOM manipulation, async programming",
-          icon: "fab fa-js-square",
-          techColor: "var(--color-javascript)",
-          specialties: ["ES6+", "Async/Await", "DOM APIs", "Modules"]
+          yearsExperience: "1+",
+          description: "Large-scale data processing, distributed computing, PySpark",
+          icon: "fas fa-fire",
+          techColor: "var(--color-spark)",
+          specialties: ["PySpark", "Spark SQL", "Data Pipelines", "Distributed Computing"]
+        },
+        {
+          name: "Azure Databricks",
+          proficiency: "Advanced",
+          yearsExperience: "1+",
+          description: "Cloud-based data engineering and analytics platform",
+          icon: "fas fa-cloud",
+          techColor: "var(--color-azure)",
+          specialties: ["Data Pipelines", "Notebooks", "Cluster Management", "ML Integration"]
+        },
+        {
+          name: "ETL Pipelines",
+          proficiency: "Advanced",
+          yearsExperience: "1+",
+          description: "Extract, Transform, Load data processing workflows",
+          icon: "fas fa-cogs",
+          techColor: "var(--color-etl)",
+          specialties: ["Data Transformation", "Pipeline Design", "Automation", "Scheduling"]
         },
         {
           name: "Python",
-          proficiency: "Advanced",
-          yearsExperience: "2+",
-          description: "Object-oriented programming, algorithms, data structures",
-          icon: "fab fa-python",
-          techColor: "var(--color-python)",
-          specialties: ["OOP", "Algorithms", "Data Structures", "Scripting"]
-        },
-        {
-          name: "HTML/CSS",
           proficiency: "Expert",
           yearsExperience: "3+",
-          description: "Semantic HTML5, modern CSS3, responsive design",
-          icon: "fab fa-html5",
-          techColor: "var(--color-html)",
-          specialties: ["Semantic HTML", "CSS Grid", "Flexbox", "Responsive"]
-        },
-        {
-          name: "Java",
-          proficiency: "Intermediate",
-          yearsExperience: "2+",
-          description: "Object-oriented programming, enterprise patterns",
-          icon: "fab fa-java",
-          techColor: "var(--color-java)",
-          specialties: ["OOP", "Spring", "Enterprise", "Design Patterns"]
-        },
-        {
-          name: "TypeScript",
-          proficiency: "Advanced",
-          yearsExperience: "1+",
-          description: "Type-safe JavaScript development",
-          icon: "fas fa-code",
-          techColor: "var(--color-typescript)",
-          specialties: ["Type Safety", "Interfaces", "Generics", "Decorators"]
+          description: "Data engineering, automation, backend development",
+          icon: "fab fa-python",
+          techColor: "var(--color-python)",
+          specialties: ["PySpark", "Data Analysis", "Automation", "Scripting"]
         }
       ]
     },
     {
-      name: "Frontend Technologies",
+      name: "Programming Languages",
       skills: [
         {
-          name: "Astro",
-          proficiency: "Expert",
-          yearsExperience: "1+",
-          description: "Static site generation, component architecture",
-          icon: "fas fa-rocket",
-          techColor: "var(--color-astro)",
-          specialties: ["SSG", "Components", "Performance", "SEO"]
-        },
-        {
-          name: "React",
+          name: "Java",
           proficiency: "Advanced",
-          yearsExperience: "2+",
-          description: "Component-based development, hooks, state management",
-          icon: "fab fa-react",
-          techColor: "var(--color-react)",
-          specialties: ["Hooks", "Context", "State Management", "JSX"]
+          yearsExperience: "3+",
+          description: "Enterprise backend development, Spring framework",
+          icon: "fab fa-java",
+          techColor: "var(--color-java)",
+          specialties: ["Spring Framework", "REST APIs", "Enterprise Apps", "JDBC"]
         },
         {
-          name: "Vue.js",
+          name: "SQL",
+          proficiency: "Advanced",
+          yearsExperience: "3+",
+          description: "Database querying and optimization",
+          icon: "fas fa-database",
+          techColor: "var(--color-sql)",
+          specialties: ["Query Optimization", "Joins", "Stored Procedures", "Performance Tuning"]
+        },
+        {
+          name: "C",
+          proficiency: "Advanced",
+          yearsExperience: "4+",
+          description: "System programming, academic instruction",
+          icon: "fas fa-code",
+          techColor: "var(--color-c)",
+          specialties: ["Systems Programming", "Memory Management", "Algorithms", "Teaching"]
+        },
+        {
+          name: "JavaScript",
           proficiency: "Intermediate",
-          yearsExperience: "1+",
-          description: "Progressive framework, reactive data binding",
-          icon: "fab fa-vuejs",
-          techColor: "var(--color-vue)",
-          specialties: ["Composition API", "Reactivity", "Templates", "Directives"]
-        },
-        {
-          name: "SCSS/Sass",
-          proficiency: "Expert",
-          yearsExperience: "3+",
-          description: "Advanced CSS preprocessing, modular styling",
-          icon: "fab fa-sass",
-          techColor: "var(--color-sass)",
-          specialties: ["Mixins", "Variables", "Nesting", "Modules"]
-        },
-        {
-          name: "CSS Grid & Flexbox",
-          proficiency: "Expert",
-          yearsExperience: "3+",
-          description: "Modern layout systems, responsive design",
-          icon: "fas fa-th",
-          techColor: "var(--color-css)",
-          specialties: ["Grid Layout", "Flexbox", "Responsive", "Mobile-First"]
+          yearsExperience: "2+",
+          description: "Frontend development and automation",
+          icon: "fab fa-js-square",
+          techColor: "var(--color-javascript)",
+          specialties: ["DOM Manipulation", "ES6+", "Frontend", "Async Programming"]
         }
       ]
     },
@@ -111,81 +93,122 @@ export const skillsData = {
       name: "Backend & Databases",
       skills: [
         {
-          name: "Node.js",
+          name: "Spring Framework",
           proficiency: "Advanced",
-          yearsExperience: "2+",
-          description: "Server-side JavaScript, API development",
-          icon: "fab fa-node-js",
-          techColor: "var(--color-nodejs)",
-          specialties: ["API Development", "Express", "Middleware", "NPM"]
+          yearsExperience: "1+",
+          description: "Enterprise Java backend development, REST APIs",
+          icon: "fas fa-leaf",
+          techColor: "var(--color-spring)",
+          specialties: ["REST APIs", "JDBC", "Dependency Injection", "Enterprise Patterns"]
         },
         {
-          name: "REST APIs",
+          name: "Oracle Database",
           proficiency: "Advanced",
-          yearsExperience: "2+",
-          description: "RESTful API design and implementation",
-          icon: "fas fa-exchange-alt",
-          techColor: "var(--color-info)",
-          specialties: ["REST", "JSON", "HTTP Methods", "Status Codes"]
-        },
-        {
-          name: "Databases",
-          proficiency: "Intermediate",
-          yearsExperience: "2+",
-          description: "SQL and NoSQL database management",
+          yearsExperience: "1+",
+          description: "Enterprise database management and optimization",
           icon: "fas fa-database",
-          techColor: "var(--color-primary)",
-          specialties: ["SQL", "MongoDB", "Database Design", "Queries"]
+          techColor: "var(--color-oracle)",
+          specialties: ["Query Optimization", "JDBC", "Performance Tuning", "Enterprise DB"]
         },
         {
-          name: "Git & Version Control",
+          name: "PostgreSQL",
+          proficiency: "Advanced",
+          yearsExperience: "2+",
+          description: "Open-source relational database management",
+          icon: "fas fa-elephant",
+          techColor: "var(--color-postgresql)",
+          specialties: ["Advanced SQL", "Query Optimization", "Database Design", "Performance"]
+        },
+        {
+          name: "RESTful APIs",
           proficiency: "Expert",
-          yearsExperience: "3+",
-          description: "Version control and collaboration workflows",
-          icon: "fab fa-git-alt",
-          techColor: "var(--color-git)",
-          specialties: ["Git", "GitHub", "Branching", "Merging"]
+          yearsExperience: "2+",
+          description: "API design, development, and integration",
+          icon: "fas fa-exchange-alt",
+          techColor: "var(--color-api)",
+          specialties: ["API Design", "JSON", "HTTP Methods", "Integration"]
         }
       ]
     },
     {
-      name: "Tools & Platforms",
+      name: "Development Tools & Platforms",
       skills: [
         {
-          name: "VS Code",
+          name: "IntelliJ IDEA",
           proficiency: "Expert",
-          yearsExperience: "3+",
-          description: "Code editing, debugging, extensions, productivity",
-          icon: "fas fa-code",
-          techColor: "var(--color-info)",
-          specialties: ["IntelliSense", "Extensions", "Debugging", "Git Integration"]
+          yearsExperience: "2+",
+          description: "Professional Java development environment",
+          icon: "fas fa-laptop-code",
+          techColor: "var(--color-intellij)",
+          specialties: ["Java Development", "Debugging", "Code Refactoring", "Maven Integration"]
+        },
+        {
+          name: "DBeaver",
+          proficiency: "Advanced",
+          yearsExperience: "1+",
+          description: "Universal database tool for SQL development",
+          icon: "fas fa-database",
+          techColor: "var(--color-dbeaver)",
+          specialties: ["SQL Development", "Query Optimization", "Database Management", "Data Export"]
         },
         {
           name: "Linux",
           proficiency: "Advanced",
-          yearsExperience: "2+",
-          description: "Command line, system administration, scripting",
+          yearsExperience: "3+",
+          description: "System administration, scripting, server management",
           icon: "fab fa-linux",
           techColor: "var(--color-linux)",
-          specialties: ["Command Line", "Shell Scripting", "System Admin", "Package Management"]
+          specialties: ["Bash Scripting", "System Admin", "Process Management", "File Systems"]
         },
         {
-          name: "GitHub Pages",
-          proficiency: "Advanced",
-          yearsExperience: "2+",
-          description: "Static site deployment, CI/CD workflows",
-          icon: "fab fa-github",
-          techColor: "var(--color-github-icon)",
-          specialties: ["Static Deployment", "Actions", "Pages", "Workflows"]
+          name: "Docker",
+          proficiency: "Intermediate",
+          yearsExperience: "1+",
+          description: "Containerization and deployment automation",
+          icon: "fab fa-docker",
+          techColor: "var(--color-docker)",
+          specialties: ["Containerization", "Image Building", "Deployment", "Orchestration"]
         },
         {
-          name: "npm/yarn",
+          name: "Git & Version Control",
+          proficiency: "Expert",
+          yearsExperience: "4+",
+          description: "Source code management and collaboration",
+          icon: "fab fa-git-alt",
+          techColor: "var(--color-git)",
+          specialties: ["Branching Strategies", "Merging", "Collaboration", "GitHub"]
+        }
+      ]
+    },
+    {
+      name: "Project Management & Methodologies",
+      skills: [
+        {
+          name: "Agile/Scrum",
           proficiency: "Advanced",
           yearsExperience: "2+",
-          description: "Package management, build tools, dependency management",
-          icon: "fab fa-npm",
-          techColor: "var(--color-npm)",
-          specialties: ["Package Management", "Scripts", "Dependencies", "Build Tools"]
+          description: "Certified Scrum Master, agile project management",
+          icon: "fas fa-users",
+          techColor: "var(--color-agile)",
+          specialties: ["Sprint Planning", "Stakeholder Management", "Team Leadership", "Process Improvement"]
+        },
+        {
+          name: "Jira",
+          proficiency: "Advanced",
+          yearsExperience: "1+",
+          description: "Project tracking and agile workflow management",
+          icon: "fas fa-tasks",
+          techColor: "var(--color-jira)",
+          specialties: ["Issue Tracking", "Sprint Management", "Reporting", "Workflow Configuration"]
+        },
+        {
+          name: "Cybersecurity",
+          proficiency: "Intermediate",
+          yearsExperience: "1+",
+          description: "Ethical hacking, digital forensics, security analysis",
+          icon: "fas fa-shield-alt",
+          techColor: "var(--color-security)",
+          specialties: ["Ethical Hacking", "CTF Challenges", "Digital Forensics", "OSINT"]
         }
       ]
     }
@@ -193,12 +216,12 @@ export const skillsData = {
   
   // Additional technical areas
   learningAreas: [
-    "Docker & Containerization",
-    "Cloud Platforms (AWS, Azure)",
-    "TypeScript",
-    "GraphQL",
-    "Test-Driven Development",
-    "CI/CD Pipelines"
+    "Advanced Machine Learning with Spark MLlib",
+    "Kubernetes & Container Orchestration",
+    "Apache Kafka for Real-time Data Streaming",
+    "Advanced Cloud Architecture (Azure, AWS)",
+    "Data Warehouse Design and Implementation",
+    "Advanced Cybersecurity and Penetration Testing"
   ],
   
   // Layout configuration

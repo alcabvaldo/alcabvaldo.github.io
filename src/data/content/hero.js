@@ -7,18 +7,18 @@ export const heroData = {
   // Text content - all text fragments
   greeting: "Hi, I'm",
   name: "Alejandro Cabral",
-  role: "Software Developer",
-  subtitle: "Computer Science Student & Aspiring Developer",
+  role: "Data Engineer",
+  subtitle: "Computer Science Student & Data Engineering Professional",
   
   // Description text fragments
-  rolePrefix: "I'm a passionate",
+  rolePrefix: "I'm a dedicated",
   roleIntroduction: " currently studying Computer Science at",
   
   // Complete description (alternative to fragments)
-  fullDescription: "I'm a passionate Software Developer currently studying Computer Science at FP-UNA, focused on creating innovative solutions and learning cutting-edge technologies.",
+  fullDescription: "I'm a dedicated Data Engineer with expertise in Apache Spark and backend development, currently studying Computer Science at FP-UNA while working remotely for international companies.",
   
   // Additional professional info
-  tagline: "Building the future, one line of code at a time",
+  tagline: "Transforming data into insights, building scalable solutions",
   location: "Paraguay",
   
   // University information
