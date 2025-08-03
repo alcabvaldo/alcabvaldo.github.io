@@ -8,7 +8,7 @@ export const heroData = {
   greeting: "Hi, I'm",
   name: "Alejandro Cabral",
   role: "Data Engineer",
-  subtitle: "Computer Science Student & Data Engineering Professional",
+  subtitle: "Computer Science Student & Data Engineering Solutions",
   
   // Description text fragments
   rolePrefix: "I'm a dedicated",
@@ -18,7 +18,7 @@ export const heroData = {
   fullDescription: "I'm a dedicated Data Engineer with expertise in Apache Spark and backend development, currently studying Computer Science at FP-UNA while working remotely for international companies.",
   
   // Additional professional info
-  tagline: "Transforming data into insights, building scalable solutions",
+  tagline: "Building scalable solutions",
   location: "Paraguay",
   
   // University information

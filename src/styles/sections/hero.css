@@ -1,15 +1,15 @@
 /* Hero Section Styles */
 .hero-section {
-  min-height: 100vh;
+  min-height: 85vh;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: var(--bg-primary) !important;
   color: var(--text-primary) !important;
   position: relative;
   overflow: hidden;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0 var(--space-lg) 0;
 }
 
 .hero-container {
@@ -174,23 +174,54 @@
 .hero-social {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   align-items: flex-start;
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(var(--bg-glass-rgb, 0, 0, 0), 0.2) !important;
+  border: 1px solid rgba(var(--border-light-rgb, 255, 255, 255), 0.1) !important;
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 100%;
 }
 
 .social-intro {
-  font-size: var(--font-sm);
-  color: var(--text-secondary) !important;
-  font-weight: var(--font-medium);
+  font-size: var(--font-xs);
+  color: var(--text-primary) !important;
+  font-weight: var(--font-semibold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.social-intro::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
 }
 
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
-  align-items: flex-start;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.social-links .email-copy-btn {
+  order: -1;
+}
+
+.social-links .social-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
 }
 
 .social-link {
@@ -256,13 +287,13 @@
 
 /* New social link button styles */
 .social-link-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--bg-glass) !important;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg-secondary) !important;
   border: 1px solid var(--border-light) !important;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   color: var(--text-secondary) !important;
   text-decoration: none;
   transition: var(--transition-fast);
@@ -271,51 +302,106 @@
   font-family: inherit;
   font-size: var(--font-sm);
   min-width: fit-content;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.social-link-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.3s;
+}
+
+.social-link-button:hover::before {
+  left: 100%;
 }
 
 .social-link-button:hover {
   background: var(--color-primary) !important;
   border-color: var(--color-primary) !important;
   color: white !important;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(var(--color-primary-rgb, 59, 130, 246), 0.3);
 }
 
 .social-link-button i {
-  font-size: var(--font-base);
+  font-size: var(--font-sm);
   flex-shrink: 0;
+  width: 14px;
+  text-align: center;
 }
 
 .link-text {
   font-weight: var(--font-medium);
   white-space: nowrap;
+  font-size: var(--font-sm);
 }
 
 /* Email copy button specific styles */
 .email-copy-btn {
-  max-width: 100%;
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-light) !important;
+  width: 100%;
+  margin-bottom: var(--space-xs);
 }
 
 .email-copy-btn .link-text {
-  font-family: monospace;
-  font-size: var(--font-xs);
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: var(--font-sm);
   color: var(--text-secondary) !important;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: var(--font-medium);
+}
+
+.email-copy-btn:hover {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 4px 15px rgba(var(--color-primary-rgb, 59, 130, 246), 0.2);
 }
 
 .email-copy-btn:hover .link-text {
   color: white !important;
 }
 
-.social-link-button.github:hover {
-  background: #333 !important;
-  border-color: #333 !important;
+.email-copy-btn i {
+  color: var(--text-secondary) !important;
 }
 
-.social-link-button.linkedin:hover {
+.email-copy-btn:hover i {
+  color: white !important;
+}
+
+/* Platform-specific hover colors */
+.social-link-button[href*="github"]:hover {
+  background: #333 !important;
+  border-color: #333 !important;
+  box-shadow: 0 8px 25px rgba(51, 51, 51, 0.3);
+}
+
+.social-link-button[href*="linkedin"]:hover {
   background: #0077b5 !important;
   border-color: #0077b5 !important;
+  box-shadow: 0 8px 25px rgba(0, 119, 181, 0.3);
+}
+
+.social-link-button[href*="twitter"]:hover {
+  background: #1da1f2 !important;
+  border-color: #1da1f2 !important;
+  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.3);
+}
+
+.social-link-button[href*="instagram"]:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  border-color: #bc1888 !important;
+  box-shadow: 0 8px 25px rgba(188, 24, 136, 0.3);
 }
 
 .sr-only {
@@ -650,44 +736,21 @@
 /* Tablet and Mobile */
 @media screen and (max-width: 980px) {
   .hero-main {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: var(--space-xl);
     text-align: center;
-    align-items: center;
+    justify-items: center;
   }
   
   .hero-content {
     max-width: 600px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    order: 1;
   }
   
   .hero-visual {
-    order: 2;
+    order: -1;
     width: 100%;
     max-width: 500px;
-  }
-  
-  .hero-social {
-    order: 3;
-    max-width: 600px;
-    width: 100%;
-    align-items: center;
-  }
-  
-  .hero-title {
-    order: 1;
-  }
-  
-  .hero-description {
-    order: 2;
-  }
-  
-  .hero-actions {
-    order: 3;
   }
   
   .visual-card {
@@ -703,7 +766,7 @@
 @media screen and (max-width: 736px) {
   .hero-section {
     min-height: 90vh;
-    padding: var(--space-xl) 0;
+    padding: var(--space-md) 0;
   }
   
   .hero-container {

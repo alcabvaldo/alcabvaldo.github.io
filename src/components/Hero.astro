@@ -34,7 +34,28 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
         <!-- Description -->
         <div class="hero-description">
           <p class="description-main" set:html={description}></p>
-          <p class="tagline">{heroData.tagline}</p>
+          
+          <!-- Social Links -->
+          <div class="hero-social">
+            <span class="social-intro">Connect with me</span>
+            <div class="social-links">
+              <!-- Copy Email Button -->
+              <button id="copyEmailBtn" class="social-link-button email-copy-btn" aria-label="Copy email to clipboard">
+                <i class="fas fa-copy"></i>
+                <span class="link-text">alejandrocabralvaldovinos@gmail.com</span>
+              </button>
+              
+              <!-- Social Media Links -->
+              <div class="social-platforms">
+                {socialLinks.primary.filter(link => link.icon !== 'fa-envelope').map(link => (
+                  <a href={link.url} class="social-link-button" target="_blank" rel="noopener">
+                    <i class={`fab ${link.icon}`}></i>
+                    <span class="link-text">{link.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Action Buttons -->
@@ -64,7 +85,7 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
           <div class="card-content terminal-content">
             <div class="terminal-prompt">
               <span class="prompt-path">C:\Users\Alejandro></span>
-              <span class="prompt-command">node developer.js</span>
+              <span class="prompt-command">personal_page.py</span>
             </div>
             <div class="code-block">
               <div class="code-line">
@@ -76,12 +97,12 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
                 <span class="code-string">"Alejandro Cabral"</span>,
               </div>
               <div class="code-line indent">
-                <span class="code-property">  skills:</span>
-                <span class="code-array">["JavaScript", "Python", "React"]</span>,
+                <span class="code-property">  languages:</span>
+                <span class="code-array">["Python", "Java",  "C", "SQL"]</span>,
               </div>
               <div class="code-line indent">
-                <span class="code-property">  passion:</span>
-                <span class="code-string">"Building amazing experiences"</span>,
+                <span class="code-property">  what:</span>
+                <span class="code-string">"Coding efficient solutions"</span>,
               </div>
               <div class="code-line indent">
                 <span class="code-property">  available:</span>
@@ -89,7 +110,7 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
               </div>
               <div class="code-line">{`}`};</div>
               <div class="code-line">
-                <span class="code-comment">// Ready to build amazing projects!</span>
+                <span class="code-comment">// Building neat projects!</span>
               </div>
             </div>
             <div class="terminal-cursor"></div>
@@ -99,39 +120,20 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
         <!-- Stats Cards -->
         <div class="stats-cards">
           <div class="stat-card">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Years</span>
+            <span class="stat-number">Software</span>
+            <span class="stat-label">Development</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Technologies</span>
+            <span class="stat-number">Data</span>
+            <span class="stat-label">Engineering</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number">8+</span>
-            <span class="stat-label">Projects</span>
+            <span class="stat-number">Available</span>
+            <span class="stat-label">Remotely</span>
           </div>
         </div>
       </div>
 
-      <!-- Social Links -->
-      <div class="hero-social">
-        <span class="social-intro">Connect with me</span>
-        <div class="social-links">
-          <!-- Copy Email Button -->
-          <button id="copyEmailBtn" class="social-link-button email-copy-btn" aria-label="Copy email to clipboard">
-            <i class="fas fa-copy"></i>
-            <span class="link-text">alejandrocabralvaldovinos@gmail.com</span>
-          </button>
-          
-          <!-- Social Media Links -->
-          {socialLinks.primary.filter(link => link.icon !== 'fa-envelope').map(link => (
-            <a href={link.url} class="social-link-button" target="_blank" rel="noopener">
-              <i class={`fab ${link.icon}`}></i>
-              <span class="link-text">{link.name}</span>
-            </a>
-          ))}
-        </div>
-      </div>
     </div>
 
   </div>
