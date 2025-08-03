@@ -7,6 +7,7 @@ export const contactData = {
   
   // Contact information
   email: "alejandrocabralvaldovinos@gmail.com",
+  location: "Paraguay (Remote Work Available)",
   
   // Text content
   buttonText: "Contact",

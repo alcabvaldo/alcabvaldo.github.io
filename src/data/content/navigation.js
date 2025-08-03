@@ -11,26 +11,6 @@ export const navigationData = {
       label: "About Me",
       href: "/about",
       active: true
-    },
-    {
-      label: "Skills",
-      href: "/about#skills",
-      active: true
-    },
-    {
-      label: "Projects",
-      href: "/about#projects",
-      active: true
-    },
-    {
-      label: "Work",
-      href: "/about#work",
-      active: true
-    },
-    {
-      label: "Contact", 
-      href: "/about#contact",
-      active: true
     }
   ],
   

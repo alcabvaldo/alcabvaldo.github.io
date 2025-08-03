@@ -1,0 +1,1224 @@
+---
+// Unified About page component with side navigation
+import { aboutData, skillsData, workData, certificationsData, contactData } from '../data/index.js';
+---
+
+<div class="about-unified">
+  <!-- Side Navigation Index -->
+  <aside class="about-nav">
+    <div class="nav-sticky">
+      <h3>About Me</h3>
+      <nav class="nav-index">
+        <ul>
+          <li><a href="#summary" data-nav="summary">Summary</a></li>
+          <li><a href="#experience" data-nav="experience">Experience</a></li>
+          <li><a href="#skills" data-nav="skills">Technical Skills</a></li>
+          <li><a href="#certifications" data-nav="certifications">Certifications</a></li>
+          <li><a href="#contact" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="about-content">
+    <header class="about-header">
+      <h1>About Me</h1>
+      <p class="about-subtitle">Data Engineer & Computer Science Student</p>
+    </header>
+
+    <!-- Summary Section -->
+    <section id="summary" class="content-section">
+      <h2>Professional Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-text">
+          <p class="intro">{aboutData.summary.intro}</p>
+          <p class="focus">{aboutData.summary.focus}</p>
+          <p class="goals">{aboutData.summary.goals}</p>
+        </div>
+        <div class="summary-metrics">
+          {aboutData.metrics.map(metric => (
+            <div class="metric-card">
+              <div class="metric-number">{metric.number}</div>
+              <div class="metric-label">{metric.label}</div>
+              <div class="metric-description">{metric.description}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div class="highlights-grid">
+        {aboutData.highlights.map(highlight => (
+          <div class="highlight-card">
+            <div class="highlight-icon">
+              <i class={highlight.icon}></i>
+            </div>
+            <div class="highlight-content">
+              <h3>{highlight.title}</h3>
+              <p>{highlight.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="content-section">
+      <h2>Professional Experience</h2>
+      <div class="experience-timeline">
+        {workData.experiences.map(experience => (
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>{experience.position}</h3>
+                <h4>{experience.company}</h4>
+              </div>
+              <div class="experience-meta">
+                <span class="duration">{experience.duration}</span>
+                <span class="location">{experience.location}</span>
+                <span class={`status ${experience.status}`}>{experience.status}</span>
+              </div>
+            </div>
+            <p class="experience-description">{experience.description}</p>
+            
+            <div class="experience-details">
+              <div class="responsibilities">
+                <h5>Key Responsibilities:</h5>
+                <ul>
+                  {experience.responsibilities.map(responsibility => (
+                    <li>{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div class="technologies">
+                <h5>Technologies Used:</h5>
+                <div class="tech-tags">
+                  {experience.technologies.map(tech => (
+                    <span class="tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
+              
+              <div class="achievements">
+                <h5>Key Achievements:</h5>
+                <ul>
+                  {experience.achievements.map(achievement => (
+                    <li>{achievement}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="content-section">
+      <h2>Technical Skills</h2>
+      <div class="skills-categories">
+        {skillsData.categories.map(category => (
+          <div class="skill-category">
+            <h3>{category.name}</h3>
+            <div class="skills-grid">
+              {category.skills.map(skill => (
+                <div class="skill-card">
+                  <div class="skill-header">
+                    <div class="skill-icon">
+                      <i class={skill.icon}></i>
+                    </div>
+                    <div class="skill-info">
+                      <h4>{skill.name}</h4>
+                      <div class="skill-meta">
+                        <span class="proficiency">{skill.proficiency}</span>
+                        <span class="experience">{skill.yearsExperience}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="skill-description">{skill.description}</p>
+                  <div class="skill-specialties">
+                    {skill.specialties.map(specialty => (
+                      <span class="specialty-tag">{specialty}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="content-section">
+      <h2>Certifications & Credentials</h2>
+      <div class="certifications-grid">
+        {certificationsData.certifications.map(cert => (
+          <div class="certification-card">
+            <div class="cert-header">
+              <div class="cert-icon">
+                <i class={cert.icon}></i>
+              </div>
+              <div class="cert-info">
+                <h4>{cert.title}</h4>
+                <p class="cert-issuer">{cert.issuer}</p>
+                <p class="cert-date">{cert.issueDate}</p>
+              </div>
+              <div class={`cert-badge ${cert.badgeColor}`}>{cert.category}</div>
+            </div>
+            <p class="cert-description">{cert.description}</p>
+            <div class="cert-skills">
+              {cert.skills.map(skill => (
+                <span class="skill-tag">{skill}</span>
+              ))}
+            </div>
+            {cert.credentialUrl && (
+              <a href={cert.credentialUrl} target="_blank" rel="noopener" class="cert-link">
+                View Credential
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <!-- Awards Section -->
+      <div class="awards-section">
+        <h3>Awards & Recognition</h3>
+        <div class="awards-grid">
+          {certificationsData.awards.map(award => (
+            <div class="award-card">
+              <div class="award-icon">
+                <i class={award.icon}></i>
+              </div>
+              <div class="award-content">
+                <h4>{award.title}</h4>
+                <p class="award-issuer">{award.issuer}</p>
+                <p class="award-description">{award.description}</p>
+                <ul class="award-achievements">
+                  {award.achievements.map(achievement => (
+                    <li>{achievement}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+      <h2>Get In Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <p class="contact-intro">I'm always interested in new opportunities and challenging projects. Whether you need a data engineer or want to collaborate on an exciting project, I'd love to hear from you.</p>
+          
+          <div class="contact-methods">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <p><a href={`mailto:${contactData.email}`} class="email-link">{contactData.email}</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Location</strong>
+                <p>{contactData.location}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <h3>Connect With Me</h3>
+          <div class="social-grid">
+            {contactData.socialLinks.map(link => (
+              <a href={link.url} target="_blank" rel="noopener" class="social-link">
+                <i class={link.icon}></i>
+                <span>{link.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-text">Scroll to explore</div>
+    <div class="scroll-arrow">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .about-unified {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--space-2xl);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-2xl);
+    min-height: 100vh;
+  }
+
+  /* Side Navigation */
+  .about-nav {
+    position: relative;
+  }
+
+  .nav-sticky {
+    position: sticky;
+    top: var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .nav-sticky h3 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--text-primary);
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+  }
+
+  .nav-index ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-index li {
+    margin-bottom: var(--space-sm);
+  }
+
+  .nav-index a {
+    display: block;
+    padding: var(--space-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+    font-weight: var(--font-medium);
+  }
+
+  .nav-index a:hover,
+  .nav-index a.active {
+    background: var(--color-primary);
+    color: white;
+    transform: translateX(4px);
+  }
+
+  /* Main Content */
+  .about-content {
+    background: var(--bg-primary);
+  }
+
+  .about-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .about-header h1 {
+    font-size: var(--font-4xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  .about-subtitle {
+    font-size: var(--font-xl);
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .content-section {
+    margin-bottom: var(--space-3xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .content-section:last-child {
+    border-bottom: none;
+  }
+
+  .content-section h2 {
+    font-size: var(--font-2xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-xl) 0;
+  }
+
+  /* Summary Section */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .summary-text p {
+    margin-bottom: var(--space-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+  }
+
+  .summary-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .metric-card {
+    background: var(--bg-card);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--border-light);
+  }
+
+  .metric-number {
+    font-size: var(--font-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .metric-label {
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .metric-description {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .highlight-card {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+  }
+
+  .highlight-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--font-lg);
+  }
+
+  .highlight-content h3 {
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .highlight-content p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* Experience Section */
+  .experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .experience-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
+  }
+
+  .experience-title h3 {
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .experience-title h4 {
+    margin: 0;
+    color: var(--color-primary);
+    font-weight: var(--font-medium);
+  }
+
+  .experience-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-xs);
+    font-size: var(--font-sm);
+  }
+
+  .duration {
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+  }
+
+  .location {
+    color: var(--text-secondary);
+  }
+
+  .status {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+  }
+
+  .status.current {
+    background: var(--color-success);
+    color: white;
+  }
+
+  .status.completed {
+    background: var(--color-secondary);
+    color: white;
+  }
+
+  .experience-description {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-lg);
+  }
+
+  .experience-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .experience-details .achievements {
+    grid-column: 1 / -1;
+  }
+
+  .experience-details h5 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+    font-size: var(--font-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .experience-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .experience-details li {
+    margin-bottom: var(--space-sm);
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: var(--space-lg);
+  }
+
+  .experience-details li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: var(--font-bold);
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .tech-tag {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+  }
+
+  /* Skills Section */
+  .skills-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .skill-category h3 {
+    margin: 0 0 var(--space-lg) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+    font-size: var(--font-xl);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+  }
+
+  .skill-header {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .skill-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .skill-info h4 {
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .skill-meta {
+    display: flex;
+    gap: var(--space-sm);
+    font-size: var(--font-sm);
+  }
+
+  .proficiency {
+    color: var(--color-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .experience {
+    color: var(--text-secondary);
+  }
+
+  .skill-description {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-md);
+  }
+
+  .skill-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .specialty-tag {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-xs);
+    border: 1px solid var(--border-light);
+  }
+
+  /* Certifications Section */
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .certification-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+  }
+
+  .cert-header {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .cert-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--font-lg);
+  }
+
+  .cert-info {
+    flex: 1;
+  }
+
+  .cert-info h4 {
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .cert-issuer {
+    color: var(--color-primary);
+    font-weight: var(--font-medium);
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  .cert-date {
+    color: var(--text-secondary);
+    font-size: var(--font-sm);
+    margin: 0;
+  }
+
+  .cert-badge {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    background: var(--color-secondary);
+    color: white;
+  }
+
+  .cert-description {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-md);
+  }
+
+  .cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .skill-tag {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-xs);
+    border: 1px solid var(--border-light);
+  }
+
+  .cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: var(--font-medium);
+    font-size: var(--font-sm);
+  }
+
+  .cert-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Awards Section */
+  .awards-section {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .awards-section h3 {
+    margin: 0 0 var(--space-lg) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+    font-size: var(--font-xl);
+  }
+
+  .awards-grid {
+    display: grid;
+    gap: var(--space-lg);
+  }
+
+  .award-card {
+    display: flex;
+    gap: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .award-icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b5a00;
+    font-size: var(--font-2xl);
+  }
+
+  .award-content h4 {
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+    font-size: var(--font-lg);
+  }
+
+  .award-issuer {
+    color: var(--color-primary);
+    font-weight: var(--font-medium);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  .award-description {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  .award-achievements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .award-achievements li {
+    margin-bottom: var(--space-sm);
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: var(--space-lg);
+  }
+
+  .award-achievements li::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: var(--font-bold);
+  }
+
+  /* Contact Section */
+  .contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .contact-intro {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-xl);
+    font-size: var(--font-lg);
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .contact-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .contact-item i {
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .contact-item strong {
+    display: block;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact-item p {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  .email-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+  }
+
+  .email-link:hover {
+    text-decoration: underline;
+    color: var(--color-secondary);
+  }
+
+  .social-links h3 {
+    margin: 0 0 var(--space-lg) 0;
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .social-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition-fast);
+  }
+
+  .social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+  }
+
+  .social-link i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: var(--font-base);
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: fixed;
+    bottom: var(--space-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    z-index: 100;
+    opacity: 0.7;
+    transition: var(--transition-fast);
+  }
+
+  .scroll-indicator:hover {
+    opacity: 1;
+  }
+
+  .scroll-text {
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-xs);
+  }
+
+  .scroll-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .scroll-arrow span {
+    width: 2px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 1px;
+    animation: scrollBounce 2s infinite;
+  }
+
+  .scroll-arrow span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .scroll-arrow span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .scroll-arrow span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes scrollBounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+      opacity: 0.4;
+    }
+    40% {
+      transform: translateY(4px);
+      opacity: 1;
+    }
+    60% {
+      transform: translateY(2px);
+      opacity: 0.8;
+    }
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 980px) {
+    .about-unified {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+    
+    .nav-sticky {
+      position: static;
+    }
+    
+    .nav-index {
+      display: none;
+    }
+    
+    .summary-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .summary-metrics {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .experience-details {
+      grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 736px) {
+    .about-unified {
+      padding: var(--space-lg);
+    }
+    
+    .summary-metrics {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .certifications-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .scroll-indicator {
+      bottom: var(--space-md);
+    }
+
+    .scroll-text {
+      font-size: var(--font-2xs);
+    }
+  }
+</style>
+
+<script>
+  // Smooth scrolling and navigation highlighting
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('[data-nav]');
+    const sections = document.querySelectorAll('.content-section');
+    
+    // Smooth scrolling
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+          // Add offset for sticky navigation
+          const offset = 80;
+          const elementPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Function to update active navigation based on scroll position
+    function updateActiveNav() {
+      let current = '';
+      const scrollY = window.pageYOffset;
+      
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100; // Offset for better detection
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = sectionId;
+        }
+      });
+      
+      // Update active states
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+      
+      // If no section is active, highlight the first one
+      if (!current && sections.length > 0) {
+        const firstSection = sections[0].getAttribute('id');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${firstSection}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }
+    
+    // Use intersection observer as backup for better performance
+    const observerOptions = {
+      threshold: [0.1, 0.3, 0.7],
+      rootMargin: '-80px 0px -80px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      let mostVisible = null;
+      let maxRatio = 0;
+      
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          mostVisible = entry.target;
+        }
+      });
+      
+      if (mostVisible) {
+        const id = mostVisible.id;
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }, observerOptions);
+    
+    // Observe all sections
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+    
+    // Also listen to scroll events for immediate feedback
+    let ticking = false;
+    
+    function handleScroll() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateActiveNav();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial update
+    updateActiveNav();
+    
+    // Update on resize
+    window.addEventListener('resize', updateActiveNav);
+    
+    // Scroll indicator functionality
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    
+    function handleScrollIndicator() {
+      if (scrollIndicator) {
+        const scrollThreshold = 150; // Hide after scrolling 150px
+        const scrollY = window.pageYOffset;
+        
+        if (scrollY > scrollThreshold) {
+          scrollIndicator.style.opacity = '0';
+          scrollIndicator.style.pointerEvents = 'none';
+        } else {
+          scrollIndicator.style.opacity = '0.7';
+          scrollIndicator.style.pointerEvents = 'auto';
+        }
+      }
+    }
+    
+    // Attach scroll indicator handler to existing scroll listener
+    const originalHandleScroll = handleScroll;
+    handleScroll = function() {
+      originalHandleScroll();
+      handleScrollIndicator();
+    };
+    
+    // Initial scroll indicator check
+    handleScrollIndicator();
+  });
+</script>

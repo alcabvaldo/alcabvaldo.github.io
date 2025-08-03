@@ -4,7 +4,10 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = 'Alejandro Cabral - Computer Science Student & Full-Stack Developer' } = Astro.props;
+const { title, description = 'Alejandro Cabral - Computer Science Student & Data Engineering Professional' } = Astro.props;
+
+// Import ContactModal component
+import ContactModal from '../components/ui/ContactModal.astro';
 ---
 
 <!DOCTYPE html>
@@ -237,6 +240,9 @@ const { title, description = 'Alejandro Cabral - Computer Science Student & Full
         <slot />
       </main>
     </div>
+    
+    <!-- Contact Modal - Global component -->
+    <ContactModal />
     
     <!-- Modern UI Module - Replaces jQuery -->
     <script>

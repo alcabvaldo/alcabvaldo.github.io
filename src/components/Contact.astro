@@ -33,9 +33,9 @@ import Card from './ui/Card.astro';
           <div class="contact-card-content">
             <h3>Send me an email</h3>
             <p>I typically respond within 24 hours</p>
-            <a href={`mailto:${contactData.email}`} class="contact-link">
+            <button onclick="window.openContactModal?.()" class="contact-link-btn">
               {contactData.email}
-            </a>
+            </button>
           </div>
         </Card>
 
@@ -47,9 +47,9 @@ import Card from './ui/Card.astro';
           <div class="contact-card-content">
             <h3>Schedule a call</h3>
             <p>Let's discuss your project in detail</p>
-            <a href={`mailto:${contactData.email}?subject=Project Discussion`} class="contact-link">
+            <button onclick="window.openContactModal?.()" class="contact-link-btn">
               Book a meeting
-            </a>
+            </button>
           </div>
         </Card>
 
@@ -71,14 +71,14 @@ import Card from './ui/Card.astro';
         <h3>Ready to get started?</h3>
         <p>Drop me a line and let's create something amazing together.</p>
         <div class="cta-buttons">
-          <Button variant="primary" size="large" href={`mailto:${contactData.email}`}>
+          <button onclick="window.openContactModal?.()" class="btn btn-primary btn-large">
             <span class="btn-icon">✉️</span>
             Send Message
-          </Button>
-          <Button variant="secondary" size="large" href={`mailto:${contactData.email}?subject=Project Inquiry`}>
+          </button>
+          <button onclick="window.openContactModal?.()" class="btn btn-secondary btn-large">
             <span class="btn-icon">💼</span>
             Discuss Project
-          </Button>
+          </button>
         </div>
       </div>
     </div>

@@ -3,6 +3,13 @@ export const socialLinks = {
   // Primary social links (used in hero)
   primary: [
     {
+      name: "Email",
+      url: "mailto:alejandrocabralvaldovinos@gmail.com",
+      icon: "fa-envelope",
+      label: "Email me",
+      username: "alejandrocabralvaldovinos"
+    },
+    {
       name: "GitHub",
       url: "https://github.com/alcabvaldo",
       icon: "fa-github",

@@ -1,4 +1,4 @@
----
+v---
 // Modern Hero section - unified design with the rest of the site
 import { heroData, themeConfig, socialLinks } from '../data/index.js';
 import Button from './ui/Button.astro';
@@ -43,19 +43,27 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
             <span class="btn-icon">🚀</span>
             View My Work
           </Button>
-          <Button variant="secondary" size="large" href="/about#contact">
+          <button onclick="window.openContactModal?.()" class="btn btn-secondary btn-large">
             <span class="btn-icon">💼</span>
             Get In Touch
-          </Button>
+          </button>
         </div>
 
         <!-- Social Links -->
         <div class="hero-social">
           <span class="social-intro">Connect with me</span>
           <div class="social-links">
-            {socialLinks.primary.map(link => (
-              <a href={link.url} class={`social-link ${link.icon}`} target="_blank" rel="noopener">
-                <span class="sr-only">{link.label}</span>
+            <!-- Copy Email Button -->
+            <button id="copyEmailBtn" class="social-link-button email-copy-btn" aria-label="Copy email to clipboard">
+              <i class="fas fa-copy"></i>
+              <span class="link-text">alejandrocabralvaldovinos@gmail.com</span>
+            </button>
+            
+            <!-- Social Media Links -->
+            {socialLinks.primary.filter(link => link.icon !== 'fa-envelope').map(link => (
+              <a href={link.url} class="social-link-button" target="_blank" rel="noopener">
+                <i class={`fab ${link.icon}`}></i>
+                <span class="link-text">{link.name}</span>
               </a>
             ))}
           </div>
@@ -126,18 +134,65 @@ const description = `${heroData.rolePrefix} <strong>${heroData.role}</strong>${h
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-text">Scroll to explore</div>
-      <div class="scroll-arrow">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
   </div>
 </article>
 
 <style>
   @import '../styles/sections/hero.css';
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', async function() {
+        const email = 'alejandrocabralvaldovinos@gmail.com';
+        
+        try {
+          await navigator.clipboard.writeText(email);
+          
+          // Visual feedback
+          const icon = this.querySelector('i');
+          const originalIcon = icon.className;
+          const originalText = this.querySelector('.link-text').textContent;
+          
+          icon.className = 'fas fa-check';
+          this.querySelector('.link-text').textContent = 'Email copied!';
+          this.style.background = 'var(--color-success)';
+          this.style.borderColor = 'var(--color-success)';
+          this.style.color = 'white';
+          
+          setTimeout(() => {
+            icon.className = originalIcon;
+            this.querySelector('.link-text').textContent = originalText;
+            this.style.background = '';
+            this.style.borderColor = '';
+            this.style.color = '';
+          }, 2000);
+        } catch (err) {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = email;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          
+          // Visual feedback
+          const icon = this.querySelector('i');
+          const originalIcon = icon.className;
+          const originalText = this.querySelector('.link-text').textContent;
+          
+          icon.className = 'fas fa-check';
+          this.querySelector('.link-text').textContent = 'Email copied!';
+          
+          setTimeout(() => {
+            icon.className = originalIcon;
+            this.querySelector('.link-text').textContent = originalText;
+          }, 2000);
+        }
+      });
+    }
+  });
+</script>
