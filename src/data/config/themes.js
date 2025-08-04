@@ -199,7 +199,7 @@ export const themes = {
 // Theme utilities
 export const themeUtils = {
   // Get theme by ID
-  getTheme: (themeId) => themes[themeId] || themes.midnight,
+  getTheme: (themeId) => themes[themeId] || themes.cosmic,
   
   // Get all available themes
   getAllThemes: () => Object.values(themes),
@@ -224,7 +224,7 @@ export const themeUtils = {
   
   // Get stored theme preference
   getStoredTheme: () => {
-    return localStorage.getItem('preferred-theme') || 'midnight';
+    return localStorage.getItem('preferred-theme') || 'cosmic';
   },
   
   // Initialize theme system

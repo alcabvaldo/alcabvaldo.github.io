@@ -13,7 +13,6 @@ const availableThemes = Object.values(themes);
     aria-expanded="false"
     aria-haspopup="menu"
   >
-    <span class="theme-icon" aria-hidden="true">🎨</span>
     <span class="theme-text">Theme</span>
     <span class="theme-chevron" aria-hidden="true">▼</span>
   </button>
@@ -72,22 +71,23 @@ const availableThemes = Object.values(themes);
     align-items: center;
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
-    background: var(--bg-glass);
-    border: 1px solid var(--border-light);
+    background: transparent;
+    border: none;
     border-radius: var(--radius-md);
     color: var(--text-primary);
     font-size: var(--font-sm);
     font-weight: var(--font-medium);
     cursor: pointer;
     transition: var(--transition-all);
-    backdrop-filter: blur(10px);
     white-space: nowrap;
   }
 
   .theme-toggle:hover {
-    background: var(--bg-card);
-    border-color: var(--border-medium);
-    transform: translateY(-1px);
+    background: transparent !important;
+    color: var(--color-primary) !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
   }
 
   .theme-toggle:focus {
@@ -177,9 +177,9 @@ const availableThemes = Object.values(themes);
   }
 
   .theme-option:hover {
-    background: var(--bg-glass);
-    border-color: var(--border-light);
-    transform: translateY(-1px);
+    background: transparent;
+    border-color: transparent;
+    transform: none;
   }
 
   .theme-option:focus {
@@ -188,8 +188,8 @@ const availableThemes = Object.values(themes);
   }
 
   .theme-option.active {
-    background: var(--bg-glass);
-    border-color: var(--color-primary);
+    background: transparent;
+    border-color: transparent;
   }
 
   .theme-option.active .theme-check {

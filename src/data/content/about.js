@@ -22,25 +22,25 @@ export const aboutData = {
     },
     {
       title: "International Experience",
-      description: "Working remotely for Canadian companies while studying in Paraguay. Exchange program at Wichita State University funded by CPK Scholarship",
+      description: "Remote work and academic exchange across different countries, gaining global perspective and adaptability",
       icon: "fa-globe",
       image: "/images/highlights/international.jpg"
     },
     {
-      title: "Academic Excellence",
-      description: "Maintaining GPA of 4.57/5.00 in Computer Engineering at FP-UNA, served as student instructor for C programming",
+      title: "Academic Achievement",
+      description: "Maintaining a strong GPA in Computer Engineering at FP-UNA and had the opportunity to serve as a student instructor for C programming",
       icon: "fa-graduation-cap",
       image: "/images/highlights/academic.jpg"
     },
     {
       title: "Backend Development",
-      description: "Production experience with Java Spring, Oracle databases, RESTful APIs, and automated deployment processes",
+      description: "Production experience in a banking environment with Java Spring, Oracle databases, RESTful APIs, and automated deployment processes",
       icon: "fa-server",
       image: "/images/highlights/backend.jpg"
     },
     {
       title: "Process Automation",
-      description: "Created Python scripts and Bash automation that reduced deployment steps by 80%, improving operational efficiency",
+      description: "Created Python scripts and Bash automation that reduced manual deployment steps, improving operational efficiency",
       icon: "fa-cogs",
       image: "/images/highlights/automation.jpg"
     },

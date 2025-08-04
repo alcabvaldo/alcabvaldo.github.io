@@ -61,11 +61,11 @@
 /* Desktop Navigation Menu */
 .nav-menu {
   display: none;
-  background: var(--bg-card) !important;
-  border-radius: var(--radius-2xl);
-  padding: var(--space-sm);
-  border: 1px solid var(--border-light) !important;
-  backdrop-filter: blur(10px);
+  background: transparent;
+  border-radius: none;
+  padding: 0;
+  border: none;
+  backdrop-filter: none;
 }
 
 .nav-list {
@@ -113,7 +113,7 @@
 
 /* Mobile Toggle */
 .mobile-toggle {
-  display: flex;
+  display: none !important;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -226,7 +226,7 @@
 }
 
 /* Responsive Breakpoints */
-@media screen and (min-width: 737px) {
+@media screen and (min-width: 981px) {
   .nav-menu {
     display: block;
   }
@@ -240,6 +240,20 @@
   }
   
   .mobile-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-controls {
+    display: none;
+  }
+  
+  .mobile-toggle {
     display: none;
   }
 }
@@ -262,8 +276,8 @@
 }
 
 .main-navigation.scrolled .nav-menu {
-  background: var(--bg-glass) !important;
-  border: 1px solid var(--border-light) !important;
+  background: transparent;
+  border: none;
 }
 
 .main-navigation.scrolled .nav-link {
@@ -286,8 +300,8 @@
   }
   
   .nav-menu {
-    background: rgba(31, 41, 55, 0.8) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
+    background: transparent;
+    border: none;
   }
   
   .nav-link {

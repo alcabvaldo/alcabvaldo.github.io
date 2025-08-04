@@ -7,8 +7,13 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
   <!-- Side Navigation Index -->
   <aside class="about-nav">
     <div class="nav-sticky">
-      <h3>About Me</h3>
-      <nav class="nav-index">
+      <div class="nav-header">
+        <h3 class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-index" role="button" tabindex="0">
+          Index
+          <span class="triangle-indicator" aria-hidden="true">▼</span>
+        </h3>
+      </div>
+      <nav class="nav-index" id="nav-index">
         <ul>
           <li><a href="#summary" data-nav="summary">Summary</a></li>
           <li><a href="#experience" data-nav="experience">Experience</a></li>
@@ -322,18 +327,58 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
   .nav-sticky {
     position: sticky;
     top: calc(80px + var(--space-lg));
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
-    padding: var(--space-lg);
-    box-shadow: var(--shadow-sm);
+    background: transparent;
+    border: none;
+    border-radius: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav-header {
+    margin-bottom: var(--space-md);
   }
 
   .nav-sticky h3 {
-    margin: 0 0 var(--space-md) 0;
+    margin: 0;
     color: var(--text-primary);
     font-size: var(--font-lg);
     font-weight: var(--font-semibold);
+  }
+
+  .nav-toggle {
+    cursor: pointer;
+    transition: var(--transition-fast);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
+  .nav-toggle:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-toggle:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .triangle-indicator {
+    font-size: var(--font-sm);
+    transition: transform var(--transition-fast);
+    color: var(--text-secondary);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-toggle[aria-expanded="true"] .triangle-indicator {
+    transform: rotate(180deg);
+  }
+
+  .nav-toggle:hover .triangle-indicator {
+    color: var(--color-primary);
   }
 
   .nav-index ul {
@@ -343,24 +388,24 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
   }
 
   .nav-index li {
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
   }
 
   .nav-index a {
     display: block;
-    padding: var(--space-sm);
+    padding: var(--space-xs) 0;
     color: var(--text-secondary);
     text-decoration: none;
-    border-radius: var(--radius-md);
+    border-radius: none;
     transition: var(--transition-fast);
     font-weight: var(--font-medium);
   }
 
   .nav-index a:hover,
   .nav-index a.active {
-    background: var(--color-primary);
-    color: white;
-    transform: translateX(4px);
+    color: var(--color-primary);
+    background: none;
+    transform: none;
   }
 
   /* Main Content */
@@ -422,7 +467,7 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
-    margin-top: calc(-4 * var(--space-xl));
+    margin-top: calc(-3 * var(--space-xl));
   }
 
   .metric-card {
@@ -1367,18 +1412,56 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     
     .nav-sticky {
       position: static;
+      margin-bottom: var(--space-xl);
+    }
+    
+    .nav-toggle {
+      cursor: pointer;
+    }
+    
+    .triangle-indicator {
+      opacity: 1;
     }
     
     .nav-index {
       display: none;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-index.expanded {
+      display: block;
+    }
+    
+    .nav-index ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      justify-content: center;
+      margin-top: var(--space-md);
+    }
+    
+    .nav-index li {
+      flex: 0 0 auto;
+      margin-bottom: 0;
+    }
+    
+    .nav-index a {
+      padding: var(--space-sm) var(--space-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      font-size: var(--font-sm);
     }
     
     .summary-grid {
       grid-template-columns: 1fr;
+      gap: var(--space-xl);
     }
     
     .summary-metrics {
       grid-template-columns: repeat(4, 1fr);
+      margin-top: 0;
     }
     
     .experience-details {
@@ -1395,8 +1478,19 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
       padding: 80px var(--space-lg) var(--space-lg) var(--space-lg);
     }
     
+    .nav-index ul {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    
+    .nav-index a {
+      text-align: center;
+      padding: var(--space-md);
+    }
+    
     .summary-metrics {
       grid-template-columns: 1fr 1fr;
+      margin-top: 0;
     }
     
     .highlights-grid {
@@ -1657,6 +1751,55 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
       }
     }
     
+    // Navigation toggle functionality
+    const navToggle = document.querySelector('[data-nav-toggle]');
+    const navIndex = document.getElementById('nav-index');
+    
+    if (navToggle && navIndex) {
+      function toggleNav() {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        const newState = !isExpanded;
+        
+        // Update aria-expanded
+        navToggle.setAttribute('aria-expanded', newState.toString());
+        
+        // Toggle the expanded class
+        if (newState) {
+          navIndex.classList.add('expanded');
+        } else {
+          navIndex.classList.remove('expanded');
+        }
+      }
+      
+      // Handle click events
+      navToggle.addEventListener('click', toggleNav);
+      
+      // Handle keyboard events for accessibility
+      navToggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleNav();
+        }
+      });
+      
+      // Set initial state based on screen size
+      function updateNavVisibility() {
+        if (window.innerWidth <= 980) {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navIndex.classList.remove('expanded');
+        } else {
+          navToggle.setAttribute('aria-expanded', 'true');
+          navIndex.classList.add('expanded');
+        }
+      }
+      
+      // Set initial state
+      updateNavVisibility();
+      
+      // Update on window resize
+      window.addEventListener('resize', updateNavVisibility);
+    }
+
     // Store cleanup function for potential future use
     window.aboutUnifiedCleanup = cleanup;
   });

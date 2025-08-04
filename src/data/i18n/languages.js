@@ -15,22 +15,6 @@ export const languages = {
     flag: '🇪🇸',
     rtl: false,
     default: false
-  },
-  pt: {
-    id: 'pt',
-    name: 'Portuguese',
-    nativeName: 'Português',
-    flag: '🇧🇷',
-    rtl: false,
-    default: false
-  },
-  fr: {
-    id: 'fr',
-    name: 'French',
-    nativeName: 'Français',
-    flag: '🇫🇷',
-    rtl: false,
-    default: false
   }
 };
 
