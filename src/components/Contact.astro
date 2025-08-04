@@ -33,9 +33,9 @@ import Card from './ui/Card.astro';
           <div class="contact-card-content">
             <h3>Send me an email</h3>
             <p>I typically respond within 24 hours</p>
-            <a href={`mailto:${contactData.email}`} class="contact-link">
+            <button class="contact-link-btn contact-modal-trigger">
               {contactData.email}
-            </a>
+            </button>
           </div>
         </Card>
 
@@ -47,9 +47,9 @@ import Card from './ui/Card.astro';
           <div class="contact-card-content">
             <h3>Schedule a call</h3>
             <p>Let's discuss your project in detail</p>
-            <a href={`mailto:${contactData.email}?subject=Project Discussion`} class="contact-link">
+            <button class="contact-link-btn contact-modal-trigger">
               Book a meeting
-            </a>
+            </button>
           </div>
         </Card>
 
@@ -71,14 +71,14 @@ import Card from './ui/Card.astro';
         <h3>Ready to get started?</h3>
         <p>Drop me a line and let's create something amazing together.</p>
         <div class="cta-buttons">
-          <Button variant="primary" size="large" href={`mailto:${contactData.email}`}>
+          <button class="btn btn-primary btn-large contact-modal-trigger">
             <span class="btn-icon">✉️</span>
             Send Message
-          </Button>
-          <Button variant="secondary" size="large" href={`mailto:${contactData.email}?subject=Project Inquiry`}>
+          </button>
+          <button class="btn btn-secondary btn-large contact-modal-trigger">
             <span class="btn-icon">💼</span>
             Discuss Project
-          </Button>
+          </button>
         </div>
       </div>
     </div>
@@ -152,3 +152,17 @@ import Card from './ui/Card.astro';
 <style>
   @import '../styles/sections/contact.css';
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactModalTriggers = document.querySelectorAll('.contact-modal-trigger');
+    
+    contactModalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        if (typeof window.openContactModal === 'function') {
+          window.openContactModal();
+        }
+      });
+    });
+  });
+</script>

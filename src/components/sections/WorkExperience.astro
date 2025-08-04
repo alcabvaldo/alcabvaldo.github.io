@@ -18,6 +18,7 @@ export interface Props {
     website?: string;
     industry: string;
     size: string;
+    logo?: string;
   };
   'data-sal'?: string;
   'data-sal-delay'?: string | number;
@@ -58,7 +59,13 @@ const statusColors = {
 <Card variant="feature" {...props}>
   <div class="work-header">
     <div class="work-icon">
-      <Icon icon={typeIcons[type] || 'fa-briefcase'} variant="circular" />
+      {companyInfo.logo ? (
+        <div class="company-logo">
+          <img src={companyInfo.logo} alt={`${company} logo`} loading="lazy" />
+        </div>
+      ) : (
+        <Icon icon={typeIcons[type] || 'fa-briefcase'} variant="circular" />
+      )}
     </div>
     
     <div class="work-meta">

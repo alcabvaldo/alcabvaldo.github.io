@@ -12,6 +12,7 @@ import { skillsData } from './content/skills.js';
 import { portfolioData } from './content/portfolio.js';
 import { workData } from './content/work.js';
 import { educationData } from './content/education.js';
+import { certificationsData } from './content/certifications.js';
 import { images } from './assets/images.js';
 import { scripts } from './assets/scripts.js';
 
@@ -29,6 +30,7 @@ export {
   portfolioData,
   workData,
   educationData,
+  certificationsData,
   images,
   scripts
 };
@@ -47,6 +49,7 @@ export default {
   portfolio: portfolioData,
   work: workData,
   education: educationData,
+  certifications: certificationsData,
   images,
   scripts
 }; 

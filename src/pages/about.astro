@@ -1,0 +1,15 @@
+---
+// About Me page - unified single-page layout with side navigation
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import AboutUnified from '../components/AboutUnified.astro';
+import { siteConfig } from '../data/index.js';
+---
+
+<Layout 
+  title={`About Me - ${siteConfig.title}`}
+  description="Learn more about Alejandro Cabral - Data Engineer, Computer Science student, skills, projects, and professional experience"
+>
+  <Navigation />
+  <AboutUnified />
+</Layout> 

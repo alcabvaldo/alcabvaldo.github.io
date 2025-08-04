@@ -1,35 +1,15 @@
-// Navigation data (extracted from current Navigation component)
+// Navigation data - updated for multi-page structure
 export const navigationData = {
   // Main navigation menu items
   mainMenu: [
     {
       label: "Home",
-      href: "#top",
+      href: "/",
       active: true
     },
     {
-      label: "About",
-      href: "#about",
-      active: true
-    },
-    {
-      label: "Skills",
-      href: "#skills",
-      active: true
-    },
-    {
-      label: "Projects",
-      href: "#projects",
-      active: true
-    },
-    {
-      label: "Work",
-      href: "#work",
-      active: true
-    },
-    {
-      label: "Contact", 
-      href: "#contact",
+      label: "About Me",
+      href: "/about",
       active: true
     }
   ],
@@ -38,7 +18,7 @@ export const navigationData = {
   futureMenuItems: [
     {
       label: "Blog",
-      href: "#blog", 
+      href: "/blog", 
       active: false
     }
   ],

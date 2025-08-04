@@ -3,57 +3,63 @@ export const aboutData = {
   // Section configuration
   sectionId: "about",
   title: "About Me",
-  subtitle: "Computer Science Student & Passionate Developer",
+  subtitle: "Data Engineer & Computer Science Student",
   
   // Enhanced personal summary
   summary: {
-    intro: "I'm a dedicated Computer Science student at FP-UNA in Paraguay, passionate about creating innovative software solutions and building modern web applications. My journey began with curiosity about how technology works, and has evolved into a commitment to becoming a skilled software engineer who contributes to meaningful projects.",
-    focus: "Currently specializing in modern web development with a strong foundation in computer science fundamentals. I enjoy tackling complex algorithms, building responsive user interfaces, and exploring new technologies. My approach combines academic rigor with practical application, ensuring both theoretical understanding and real-world implementation skills.",
-    goals: "My goal is to bridge the gap between academic computer science and industry best practices, contributing to innovative projects while continuously expanding my technical expertise. I'm particularly interested in full-stack development, software architecture, and emerging web technologies."
+    intro: "I'm a dedicated Data Engineer currently working remotely for Stoic Finch (Canada) while pursuing Computer Science at FP-UNA in Paraguay. With a GPA of 4.57/5.00 and international experience from Wichita State University, I specialize in data pipeline development, backend systems, and scalable data processing solutions.",
+    focus: "Currently specializing in Data Engineering with expertise in Apache Spark, ETL pipelines, and cloud-based data solutions using Azure Databricks. My professional experience includes backend development with Java Spring and Oracle databases, process automation, and production deployment validation. I combine academic excellence with hands-on industry experience.",
+    goals: "My goal is to advance in the Data Engineering field while contributing to innovative data-driven projects. I'm passionate about transforming raw data into actionable insights, building scalable data architectures, and leveraging machine learning to solve complex business problems. I aim to bridge academic computer science knowledge with cutting-edge industry practices."
   },
   
   // Enhanced key highlights
   highlights: [
     {
-      title: "Academic Excellence",
-      description: "Pursuing Computer Science at FP-UNA with focus on algorithms, software engineering, and modern development practices",
-      icon: "fa-graduation-cap"
+      title: "Data Engineering Expertise",
+      description: "Professional Data Engineer with Databricks certifications, specializing in Apache Spark, ETL pipelines, and cloud-based data processing",
+      icon: "fa-database",
+      image: "/images/highlights/data-engineering.jpg"
     },
     {
-      title: "Modern Web Development",
-      description: "Proficient in building responsive, performant web applications using cutting-edge frameworks like Astro, React, and Vue.js",
-      icon: "fa-code"
+      title: "International Experience",
+      description: "Remote work and academic exchange across different countries, gaining global perspective and adaptability",
+      icon: "fa-globe",
+      image: "/images/highlights/international.jpg"
     },
     {
-      title: "Problem-Solving Mindset",
-      description: "Strong analytical thinking and systematic approach to complex programming challenges and software architecture decisions",
-      icon: "fa-puzzle-piece"
+      title: "Academic Achievement",
+      description: "Maintaining a strong GPA in Computer Engineering at FP-UNA and had the opportunity to serve as a student instructor for C programming",
+      icon: "fa-graduation-cap",
+      image: "/images/highlights/academic.jpg"
     },
     {
-      title: "Continuous Learning",
-      description: "Actively exploring emerging technologies, contributing to open source projects, and staying current with industry trends",
-      icon: "fa-book-open"
+      title: "Backend Development",
+      description: "Production experience in a banking environment with Java Spring, Oracle databases, RESTful APIs, and automated deployment processes",
+      icon: "fa-server",
+      image: "/images/highlights/backend.jpg"
     },
     {
-      title: "Project Leadership",
-      description: "Experience leading development projects from conception to deployment, including this portfolio built with modern Astro architecture",
-      icon: "fa-rocket"
+      title: "Process Automation",
+      description: "Created Python scripts and Bash automation that reduced manual deployment steps, improving operational efficiency",
+      icon: "fa-cogs",
+      image: "/images/highlights/automation.jpg"
     },
     {
-      title: "Technical Writing",
-      description: "Skilled at documenting code, creating technical explanations, and sharing knowledge with the developer community",
-      icon: "fa-pen-nib"
+      title: "Cybersecurity Knowledge",
+      description: "Studied Ethical Hacking and Cybersecurity at Wichita State, participated in CTF challenges and digital forensics",
+      icon: "fa-shield-alt",
+      image: "/images/highlights/cybersecurity.jpg"
     }
   ],
   
   // Enhanced current focus areas
   currentFocus: [
-    "Advanced JavaScript frameworks and libraries",
-    "Computer Science fundamentals and algorithms", 
-    "Full-stack web application development",
-    "Modern DevOps and deployment practices",
-    "Open source contribution and collaboration",
-    "Building real-world projects with business impact"
+    "Advanced Data Engineering with Apache Spark and PySpark",
+    "Cloud-based data solutions using Azure Databricks", 
+    "ETL pipeline development and optimization",
+    "Machine Learning integration with data pipelines",
+    "Backend development with Java Spring and Python",
+    "International remote collaboration and agile methodologies"
   ],
   
   // Personal interests and values
@@ -67,27 +73,27 @@ export const aboutData = {
     "Paraguay Tech Community & Local Development"
   ],
   
-  // Achievement metrics
+  // Key metrics
   metrics: [
     {
-      number: "3+",
-      label: "Years Programming",
-      description: "Experience with multiple languages and frameworks"
+      number: "2+",
+      label: "Years Experience",
+      description: "Professional data engineering and development"
     },
     {
-      number: "15+",
+      number: "20+",
       label: "Technologies",
-      description: "Programming languages, frameworks, and tools mastered"
+      description: "Data engineering and development tools"
     },
     {
-      number: "8+",
-      label: "Projects Built",
-      description: "From academic assignments to production applications"
+      number: "6",
+      label: "Certifications",
+      description: "Professional certifications and credentials"
     },
     {
-      number: "100%",
-      label: "Passion",
-      description: "Dedication to continuous learning and improvement"
+      number: "Global",
+      label: "Remote Work",
+      description: "Available worldwide for remote collaboration"
     }
   ],
   

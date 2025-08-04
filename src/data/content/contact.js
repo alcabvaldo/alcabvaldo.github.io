@@ -7,6 +7,13 @@ export const contactData = {
   
   // Contact information
   email: "alejandrocabralvaldovinos@gmail.com",
+  location: "Paraguay (Remotely Available Worldwide)",
+  timezone: {
+    name: "Paraguay Time",
+    code: "PYT",
+    offset: "UTC-3",
+    iana: "America/Asuncion"
+  },
   
   // Text content
   buttonText: "Contact",
