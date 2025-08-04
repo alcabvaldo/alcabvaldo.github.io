@@ -309,18 +309,19 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     gap: var(--space-2xl);
     max-width: 1400px;
     margin: 0 auto;
-    padding: var(--space-2xl);
+    padding: 80px var(--space-2xl) var(--space-2xl) var(--space-2xl);
     min-height: 100vh;
   }
 
   /* Side Navigation */
   .about-nav {
     position: relative;
+    padding-top: var(--space-lg);
   }
 
   .nav-sticky {
     position: sticky;
-    top: var(--space-xl);
+    top: calc(80px + var(--space-lg));
     background: var(--bg-card);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
@@ -372,14 +373,14 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
   }
 
   .about-header h1 {
-    font-size: var(--font-4xl);
+    font-size: var(--font-5xl);
     font-weight: var(--font-bold);
     color: var(--text-primary);
     margin: 0 0 var(--space-sm) 0;
   }
 
   .about-subtitle {
-    font-size: var(--font-xl);
+    font-size: var(--font-2xl);
     color: var(--text-secondary);
     margin: 0;
   }
@@ -395,7 +396,7 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
   }
 
   .content-section h2 {
-    font-size: var(--font-2xl);
+    font-size: var(--font-3xl);
     font-weight: var(--font-semibold);
     color: var(--text-primary);
     margin: 0 0 var(--space-xl) 0;
@@ -407,18 +408,21 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     grid-template-columns: 2fr 1fr;
     gap: var(--space-2xl);
     margin-bottom: var(--space-2xl);
+    align-items: start;
   }
 
   .summary-text p {
     margin-bottom: var(--space-lg);
     line-height: var(--leading-relaxed);
     color: var(--text-secondary);
+    font-size: var(--font-lg);
   }
 
   .summary-metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
+    margin-top: calc(-4 * var(--space-xl));
   }
 
   .metric-card {
@@ -612,12 +616,14 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     margin: 0 0 var(--space-sm) 0;
     color: var(--text-primary);
     font-weight: var(--font-semibold);
+    font-size: var(--font-xl);
   }
 
   .highlight-content p {
     margin: 0;
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
+    font-size: var(--font-base);
   }
 
   /* Experience Section */
@@ -1386,7 +1392,7 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
 
   @media screen and (max-width: 736px) {
     .about-unified {
-      padding: var(--space-lg);
+      padding: 80px var(--space-lg) var(--space-lg) var(--space-lg);
     }
     
     .summary-metrics {
@@ -1527,11 +1533,21 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
+        
+        // Special case: Summary button scrolls to top of page
+        if (targetId === 'summary') {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+          return;
+        }
+        
         const targetSection = document.getElementById(targetId);
         
         if (targetSection) {
-          // Add offset for sticky navigation
-          const offset = 80;
+          // Add offset for fixed navigation bar
+          const offset = 120;
           const elementPosition = targetSection.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - offset;
           
@@ -1550,7 +1566,7 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
       
       sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100; // Offset for better detection
+        const sectionTop = section.offsetTop - 150; // Offset for fixed navigation detection
         const sectionId = section.getAttribute('id');
         
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -1580,7 +1596,7 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     // Use intersection observer as backup for better performance
     const observerOptions = {
       threshold: [0.1, 0.3, 0.7],
-      rootMargin: '-80px 0px -80px 0px'
+      rootMargin: '-120px 0px -120px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {

@@ -12,7 +12,7 @@ export const skillsData = {
       skills: [
         {
           name: "Apache Spark",
-          proficiency: "Expert",
+          proficiency: "Intermediate",
           description: "Large-scale data processing, distributed computing, PySpark",
           icon: "fas fa-fire",
           techColor: "var(--color-spark)",
@@ -20,7 +20,7 @@ export const skillsData = {
         },
         {
           name: "Azure Databricks",
-          proficiency: "Advanced",
+          proficiency: "Intermediate",
           description: "Cloud-based data engineering and analytics platform",
           icon: "fas fa-cloud",
           techColor: "var(--color-azure)",
@@ -28,19 +28,11 @@ export const skillsData = {
         },
         {
           name: "ETL Pipelines",
-          proficiency: "Advanced",
+          proficiency: "Intermediate",
           description: "Extract, Transform, Load data processing workflows",
           icon: "fas fa-cogs",
           techColor: "var(--color-etl)",
           specialties: ["Data Transformation", "Pipeline Design", "Automation", "Scheduling"]
-        },
-        {
-          name: "Python",
-          proficiency: "Expert",
-          description: "Data engineering, automation, backend development",
-          icon: "fab fa-python",
-          techColor: "var(--color-python)",
-          specialties: ["PySpark", "Data Analysis", "Automation", "Scripting"]
         }
       ]
     },
@@ -102,7 +94,7 @@ export const skillsData = {
       skills: [
         {
           name: "Spring Framework",
-          proficiency: "Advanced",
+          proficiency: "Intermediate",
           description: "Enterprise Java backend development, REST APIs",
           icon: "fas fa-leaf",
           techColor: "var(--color-spring)",
@@ -110,7 +102,7 @@ export const skillsData = {
         },
         {
           name: "Oracle Database",
-          proficiency: "Advanced",
+          proficiency: "Intermediate",
           description: "Enterprise database management and optimization",
           icon: "fas fa-database",
           techColor: "var(--color-oracle)",
@@ -118,15 +110,15 @@ export const skillsData = {
         },
         {
           name: "PostgreSQL",
-          proficiency: "Advanced",
+          proficiency: "Beginner",
           description: "Open-source relational database management",
           icon: "fas fa-elephant",
           techColor: "var(--color-postgresql)",
-          specialties: ["Advanced SQL", "Query Optimization", "Database Design", "Performance"]
+          specialties: ["Advanced SQL", "Query Optimization", "Performance"]
         },
         {
           name: "RESTful APIs",
-          proficiency: "Expert",
+          proficiency: "Advanced",
           description: "API design, development, and integration",
           icon: "fas fa-exchange-alt",
           techColor: "var(--color-api)",
@@ -139,7 +131,7 @@ export const skillsData = {
       skills: [
         {
           name: "IntelliJ IDEA",
-          proficiency: "Expert",
+          proficiency: "Advanced",
           description: "Professional Java development environment",
           icon: "fas fa-laptop-code",
           techColor: "var(--color-intellij)",
@@ -147,7 +139,7 @@ export const skillsData = {
         },
         {
           name: "DBeaver",
-          proficiency: "Advanced",
+          proficiency: "Intermediate",
           description: "Universal database tool for SQL development",
           icon: "fas fa-database",
           techColor: "var(--color-dbeaver)",
@@ -155,7 +147,7 @@ export const skillsData = {
         },
         {
           name: "Linux",
-          proficiency: "Advanced",
+          proficiency: "Intermediate",
           description: "System administration, scripting, server management",
           icon: "fab fa-linux",
           techColor: "var(--color-linux)",
@@ -163,7 +155,7 @@ export const skillsData = {
         },
         {
           name: "Docker",
-          proficiency: "Intermediate",
+          proficiency: "Beginner",
           description: "Containerization and deployment automation",
           icon: "fab fa-docker",
           techColor: "var(--color-docker)",
@@ -171,7 +163,7 @@ export const skillsData = {
         },
         {
           name: "Git & Version Control",
-          proficiency: "Expert",
+          proficiency: "Advanced",
           description: "Source code management and collaboration",
           icon: "fab fa-git-alt",
           techColor: "var(--color-git)",
@@ -184,7 +176,7 @@ export const skillsData = {
       skills: [
         {
           name: "Agile/Scrum",
-          proficiency: "Advanced",
+          proficiency: "Intermediate",
           description: "Certified Scrum Master, agile project management",
           icon: "fas fa-users",
           techColor: "var(--color-agile)",
@@ -192,7 +184,7 @@ export const skillsData = {
         },
         {
           name: "Jira",
-          proficiency: "Advanced",
+          proficiency: "Intermediate",
           description: "Project tracking and agile workflow management",
           icon: "fas fa-tasks",
           techColor: "var(--color-jira)",
@@ -200,7 +192,7 @@ export const skillsData = {
         },
         {
           name: "Cybersecurity",
-          proficiency: "Intermediate",
+          proficiency: "Beginner",
           description: "Ethical hacking, digital forensics, security analysis",
           icon: "fas fa-shield-alt",
           techColor: "var(--color-security)",
@@ -208,16 +200,6 @@ export const skillsData = {
         }
       ]
     }
-  ],
-  
-  // Additional technical areas
-  learningAreas: [
-    "Advanced Machine Learning with Spark MLlib",
-    "Kubernetes & Container Orchestration",
-    "Apache Kafka for Real-time Data Streaming",
-    "Advanced Cloud Architecture (Azure, AWS)",
-    "Data Warehouse Design and Implementation",
-    "Advanced Cybersecurity and Penetration Testing"
   ],
   
   // Layout configuration
