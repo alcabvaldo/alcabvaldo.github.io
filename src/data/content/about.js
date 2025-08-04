@@ -73,27 +73,27 @@ export const aboutData = {
     "Paraguay Tech Community & Local Development"
   ],
   
-  // Achievement metrics
+  // Key metrics
   metrics: [
     {
-      number: "4.57",
-      label: "GPA /5.00",
-      description: "Academic excellence in Computer Engineering"
+      number: "2+",
+      label: "Years Experience",
+      description: "Professional data engineering and development"
     },
     {
       number: "20+",
       label: "Technologies",
-      description: "Data engineering, backend, and programming tools"
+      description: "Data engineering and development tools"
     },
     {
-      number: "7+",
+      number: "6",
       label: "Certifications",
-      description: "Professional certifications including Databricks and Scrum"
+      description: "Professional certifications and credentials"
     },
     {
-      number: "2",
-      label: "Countries",
-      description: "International work experience and academic exchange"
+      number: "Global",
+      label: "Remote Work",
+      description: "Available worldwide for remote collaboration"
     }
   ],
   

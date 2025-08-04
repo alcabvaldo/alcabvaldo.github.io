@@ -13,7 +13,6 @@ export const skillsData = {
         {
           name: "Apache Spark",
           proficiency: "Expert",
-          yearsExperience: "1+",
           description: "Large-scale data processing, distributed computing, PySpark",
           icon: "fas fa-fire",
           techColor: "var(--color-spark)",
@@ -22,7 +21,6 @@ export const skillsData = {
         {
           name: "Azure Databricks",
           proficiency: "Advanced",
-          yearsExperience: "1+",
           description: "Cloud-based data engineering and analytics platform",
           icon: "fas fa-cloud",
           techColor: "var(--color-azure)",
@@ -31,7 +29,6 @@ export const skillsData = {
         {
           name: "ETL Pipelines",
           proficiency: "Advanced",
-          yearsExperience: "1+",
           description: "Extract, Transform, Load data processing workflows",
           icon: "fas fa-cogs",
           techColor: "var(--color-etl)",
@@ -40,7 +37,6 @@ export const skillsData = {
         {
           name: "Python",
           proficiency: "Expert",
-          yearsExperience: "3+",
           description: "Data engineering, automation, backend development",
           icon: "fab fa-python",
           techColor: "var(--color-python)",
@@ -53,8 +49,7 @@ export const skillsData = {
       skills: [
         {
           name: "Java",
-          proficiency: "Advanced",
-          yearsExperience: "3+",
+          proficiency: "Intermediate",
           description: "Enterprise backend development, Spring framework",
           icon: "fab fa-java",
           techColor: "var(--color-java)",
@@ -62,8 +57,7 @@ export const skillsData = {
         },
         {
           name: "SQL",
-          proficiency: "Advanced",
-          yearsExperience: "3+",
+          proficiency: "Intermediate",
           description: "Database querying and optimization",
           icon: "fas fa-database",
           techColor: "var(--color-sql)",
@@ -71,22 +65,36 @@ export const skillsData = {
         },
         {
           name: "C",
-          proficiency: "Advanced",
-          yearsExperience: "4+",
+          proficiency: "Intermediate",
           description: "System programming, academic instruction",
           icon: "fas fa-code",
           techColor: "var(--color-c)",
-          specialties: ["Systems Programming", "Memory Management", "Algorithms", "Teaching"]
+          specialties: ["Systems Programming", "Memory Management", "Algorithms"]
         },
         {
           name: "JavaScript",
-          proficiency: "Intermediate",
-          yearsExperience: "2+",
+          proficiency: "Beginner",
           description: "Frontend development and automation",
           icon: "fab fa-js-square",
           techColor: "var(--color-javascript)",
-          specialties: ["DOM Manipulation", "ES6+", "Frontend", "Async Programming"]
-        }
+          specialties: ["DOM Manipulation", "Frontend", "Async Programming"]
+        },
+        {
+          name: "Python",
+          proficiency: "Expert",
+          description: "General-purpose programming, scripting, data engineering, automation",
+          icon: "fab fa-python",
+          techColor: "var(--color-python)",
+          specialties: [
+            "PySpark",
+            "Data Analysis",
+            "Automation",
+            "Scripting",
+            "OOP",
+            "Testing"
+          ]
+        },
+        
       ]
     },
     {
@@ -95,7 +103,6 @@ export const skillsData = {
         {
           name: "Spring Framework",
           proficiency: "Advanced",
-          yearsExperience: "1+",
           description: "Enterprise Java backend development, REST APIs",
           icon: "fas fa-leaf",
           techColor: "var(--color-spring)",
@@ -104,7 +111,6 @@ export const skillsData = {
         {
           name: "Oracle Database",
           proficiency: "Advanced",
-          yearsExperience: "1+",
           description: "Enterprise database management and optimization",
           icon: "fas fa-database",
           techColor: "var(--color-oracle)",
@@ -113,7 +119,6 @@ export const skillsData = {
         {
           name: "PostgreSQL",
           proficiency: "Advanced",
-          yearsExperience: "2+",
           description: "Open-source relational database management",
           icon: "fas fa-elephant",
           techColor: "var(--color-postgresql)",
@@ -122,7 +127,6 @@ export const skillsData = {
         {
           name: "RESTful APIs",
           proficiency: "Expert",
-          yearsExperience: "2+",
           description: "API design, development, and integration",
           icon: "fas fa-exchange-alt",
           techColor: "var(--color-api)",
@@ -136,7 +140,6 @@ export const skillsData = {
         {
           name: "IntelliJ IDEA",
           proficiency: "Expert",
-          yearsExperience: "2+",
           description: "Professional Java development environment",
           icon: "fas fa-laptop-code",
           techColor: "var(--color-intellij)",
@@ -145,7 +148,6 @@ export const skillsData = {
         {
           name: "DBeaver",
           proficiency: "Advanced",
-          yearsExperience: "1+",
           description: "Universal database tool for SQL development",
           icon: "fas fa-database",
           techColor: "var(--color-dbeaver)",
@@ -154,7 +156,6 @@ export const skillsData = {
         {
           name: "Linux",
           proficiency: "Advanced",
-          yearsExperience: "3+",
           description: "System administration, scripting, server management",
           icon: "fab fa-linux",
           techColor: "var(--color-linux)",
@@ -163,7 +164,6 @@ export const skillsData = {
         {
           name: "Docker",
           proficiency: "Intermediate",
-          yearsExperience: "1+",
           description: "Containerization and deployment automation",
           icon: "fab fa-docker",
           techColor: "var(--color-docker)",
@@ -172,7 +172,6 @@ export const skillsData = {
         {
           name: "Git & Version Control",
           proficiency: "Expert",
-          yearsExperience: "4+",
           description: "Source code management and collaboration",
           icon: "fab fa-git-alt",
           techColor: "var(--color-git)",
@@ -186,7 +185,6 @@ export const skillsData = {
         {
           name: "Agile/Scrum",
           proficiency: "Advanced",
-          yearsExperience: "2+",
           description: "Certified Scrum Master, agile project management",
           icon: "fas fa-users",
           techColor: "var(--color-agile)",
@@ -195,7 +193,6 @@ export const skillsData = {
         {
           name: "Jira",
           proficiency: "Advanced",
-          yearsExperience: "1+",
           description: "Project tracking and agile workflow management",
           icon: "fas fa-tasks",
           techColor: "var(--color-jira)",
@@ -204,7 +201,6 @@ export const skillsData = {
         {
           name: "Cybersecurity",
           proficiency: "Intermediate",
-          yearsExperience: "1+",
           description: "Ethical hacking, digital forensics, security analysis",
           icon: "fas fa-shield-alt",
           techColor: "var(--color-security)",

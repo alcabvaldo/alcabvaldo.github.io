@@ -372,10 +372,11 @@ button#copyEmailBtn {
   order: -1;
 }
 
-/* Email copy button specific styles */
+/* Email copy button specific styles - styled as plain text link */
 .email-copy-btn {
-  background: var(--bg-secondary) !important;
-  border: 1px solid var(--border-light) !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
   width: 100%;
   margin-bottom: var(--space-md);
   outline: none;
@@ -383,17 +384,29 @@ button#copyEmailBtn {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-shadow: none !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  display: block;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  color: var(--color-primary) !important;
 }
 
 .email-copy-btn:focus {
-  outline: none;
-  /* border: 1px solid var(--border-light) !important; */
-  box-shadow: none;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .email-copy-btn:active {
-  /* border: 5px solid var(--border-light) !important; */
-  box-shadow: none;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 .email-copy-btn .link-text {
@@ -405,21 +418,26 @@ button#copyEmailBtn {
   font-weight: var(--font-medium);
 }
 .email-copy-btn:hover {
-  background: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
-  box-shadow: 0 4px 15px rgba(var(--color-primary-rgb, 59, 130, 246), 0.2);
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  text-decoration: underline;
+  color: var(--color-secondary) !important;
 }
 
 .email-copy-btn:hover .link-text {
-  color: white !important;
+  text-decoration: underline;
+  color: var(--color-secondary) !important;
 }
 
 .email-copy-btn i {
-  color: var(--text-secondary) !important;
+  color: var(--color-primary) !important;
+  margin-right: var(--space-xs);
 }
 
 .email-copy-btn:hover i {
-  color: white !important;
+  color: var(--color-secondary) !important;
 }
 
 /* Platform-specific hover colors */

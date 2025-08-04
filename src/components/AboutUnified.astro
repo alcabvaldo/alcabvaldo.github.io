@@ -87,6 +87,17 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
         {workData.experiences.map(experience => (
           <div class="experience-item">
             <div class="experience-header">
+              <div class="experience-logo">
+                {experience.companyInfo?.logo ? (
+                  <div class="company-logo-container">
+                    <img src={experience.companyInfo.logo} alt={`${experience.company} logo`} loading="lazy" />
+                  </div>
+                ) : (
+                  <div class="company-placeholder">
+                    <i class="fas fa-building"></i>
+                  </div>
+                )}
+              </div>
               <div class="experience-title">
                 <h3>{experience.position}</h3>
                 <h4>{experience.company}</h4>
@@ -280,7 +291,7 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
           <div class="social-grid">
             {contactData.socialLinks.map(link => (
               <a href={link.url} target="_blank" rel="noopener" class="social-link">
-                <i class={link.icon}></i>
+                <i class={`fab ${link.icon}`}></i>
                 <span>{link.name}</span>
               </a>
             ))}
@@ -625,9 +636,56 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
 
   .experience-header {
     display: flex;
-    justify-content: space-between;
+    gap: var(--space-lg);
     align-items: flex-start;
     margin-bottom: var(--space-lg);
+  }
+
+  .experience-logo {
+    flex-shrink: 0;
+  }
+
+  .company-logo-container {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-glass);
+    border: 2px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+  }
+
+  .company-logo-container:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .company-logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: var(--space-xs);
+  }
+
+  .company-placeholder {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: var(--font-xl);
+  }
+
+  .experience-title {
+    flex: 1;
   }
 
   .experience-title h3 {
@@ -648,6 +706,8 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     align-items: flex-end;
     gap: var(--space-xs);
     font-size: var(--font-sm);
+    margin-top: var(--space-sm);
+    margin-left: auto;
   }
 
   .duration {
@@ -1115,17 +1175,24 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     color: var(--color-primary);
     text-decoration: none;
     transition: var(--transition-fast);
-    background: none;
-    border: none;
-    padding: 0;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
     font: inherit;
     cursor: pointer;
     display: inline;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
   }
 
   .email-link:hover {
     text-decoration: underline;
     color: var(--color-secondary);
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
   }
 
   .email-link:focus {
@@ -1338,6 +1405,21 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
       grid-template-columns: 1fr;
     }
 
+    .experience-header {
+      flex-direction: column;
+      gap: var(--space-md);
+      align-items: center;
+      text-align: center;
+    }
+
+    .experience-logo {
+      align-self: center;
+    }
+
+    .experience-meta {
+      align-items: center;
+      margin-left: 0;
+    }
 
     .scroll-text {
       font-size: var(--font-2xs);
