@@ -9,19 +9,20 @@ export const educationData = {
   university: {
     institution: "Facultad Politécnica - Universidad Nacional de Asunción",
     shortName: "FP-UNA",
-    degree: "Computer Science",
-    status: "Current Student",
-    location: "Paraguay",
+    degree: "Ingeniería Informática (Computer Science)",
+    status: "In progress — thesis with professors",
+    location: "Asunción, Paraguay",
     website: "https://www.pol.una.py/",
     logo: "/images/education/fp-una-logo.png",
-    description: "Pursuing a comprehensive Computer Science education with focus on software engineering, algorithms, and modern programming practices.",
-    startDate: "2022",
-    expectedGraduation: "2026",
+    description: "Currently working on a thesis with professors for Ingeniería Informática at Universidad Nacional de Asunción (Paraguay). Deep-learning research track: multi-channel CNN with statistical planes for limited-data medical imaging (co-authored; advised by Prof. José Luis Vázquez; no published results yet). No master's degree; degree not yet completed.",
+    startDate: "2019",
+    // Not graduated — do not set expectedGraduation / end year as a completion claim
+    thesisInProgress: true,
     highlights: [
-      "Strong foundation in computer science fundamentals",
-      "Hands-on programming experience across multiple languages",
-      "Collaborative project work and team development",
-      "Modern software engineering methodologies"
+      "Thesis in progress with professors (Ingeniería Informática)",
+      "Coursework in algorithms, databases, concurrent and distributed systems",
+      "Teaching assistant for C programming",
+      "No master's degree; undergraduate program not yet finished"
     ]
   },
   

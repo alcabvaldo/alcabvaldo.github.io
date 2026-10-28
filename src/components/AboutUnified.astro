@@ -187,6 +187,20 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     <!-- Certifications Section -->
     <section id="certifications" class="content-section">
       <h2>Certifications & Credentials</h2>
+      {certificationsData.walletUrl && (
+        <p class="cert-wallet-line">
+          <a
+            class="cert-title-link"
+            href={certificationsData.walletUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Databricks public wallet
+            <i class="fas fa-external-link-alt cert-ext-icon" aria-hidden="true"></i>
+          </a>
+          <span class="cert-wallet-note"> — verify both Associate credentials</span>
+        </p>
+      )}
       <div class="certifications-grid">
         {certificationsData.certifications.map(cert => (
           <div class="certification-card">
@@ -201,9 +215,24 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
                 )}
               </div>
               <div class="cert-info">
-                <h4>{cert.title}</h4>
+                <h4>
+                  {cert.credentialUrl ? (
+                    <a
+                      class="cert-title-link"
+                      href={cert.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Open credential"
+                    >
+                      {cert.title}
+                      <i class="fas fa-external-link-alt cert-ext-icon" aria-hidden="true"></i>
+                    </a>
+                  ) : (
+                    <span class="cert-title-plain">{cert.title}</span>
+                  )}
+                </h4>
                 <p class="cert-issuer">{cert.issuer}</p>
-                <p class="cert-date">{cert.issueDate}</p>
+                <p class="cert-date">{cert.issueDate}{cert.expires ? ` · Expires ${cert.expires}` : ''}</p>
               </div>
               <div class={`cert-badge ${cert.badgeColor}`}>{cert.category}</div>
             </div>
@@ -213,11 +242,6 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
                 <span class="skill-tag">{skill}</span>
               ))}
             </div>
-            {cert.credentialUrl && (
-              <a href={cert.credentialUrl} target="_blank" rel="noopener" class="cert-link">
-                View Credential
-              </a>
-            )}
           </div>
         ))}
       </div>
@@ -1007,6 +1031,50 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     font-weight: var(--font-semibold);
   }
 
+  .cert-wallet-line {
+    margin: 0 0 var(--space-lg) 0;
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+  }
+
+  .cert-wallet-note {
+    color: var(--text-secondary);
+  }
+
+  /* Title IS the credential link — no separate "View" text */
+  .cert-title-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    cursor: pointer;
+  }
+
+  .cert-title-link:hover,
+  .cert-title-link:focus-visible {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+    outline: none;
+  }
+
+  .cert-ext-icon {
+    display: inline-block;
+    margin-left: 0.35em;
+    font-size: 0.7em;
+    opacity: 0.45;
+    vertical-align: middle;
+    transition: opacity 0.15s ease;
+  }
+
+  .cert-title-link:hover .cert-ext-icon,
+  .cert-title-link:focus-visible .cert-ext-icon {
+    opacity: 0.9;
+  }
+
+  .cert-title-plain {
+    color: var(--text-primary);
+  }
+
   .cert-issuer {
     color: var(--color-primary);
     font-weight: var(--font-medium);
@@ -1039,7 +1107,7 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
-    margin-bottom: var(--space-md);
+    margin-bottom: 0;
   }
 
   .skill-tag {
@@ -1049,20 +1117,6 @@ import { aboutData, skillsData, workData, certificationsData, contactData } from
     border-radius: var(--radius-sm);
     font-size: var(--font-xs);
     border: 1px solid var(--border-light);
-  }
-
-  .cert-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-xs);
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: var(--font-medium);
-    font-size: var(--font-sm);
-  }
-
-  .cert-link:hover {
-    text-decoration: underline;
   }
 
   /* Awards Section */

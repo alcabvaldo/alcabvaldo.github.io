@@ -2,13 +2,15 @@
 export const personalData = {
   // Basic information
   name: "Alejandro Cabral",
-  role: "Software Developer", 
-  description: "I'm a Software Developer, currently studying Computer Sciente at FP-UNA.",
+  role: "Data Engineer",
+  description: "I'm a Data Engineer currently working on a thesis with professors for Ingeniería Informática at Universidad Nacional de Asunción (Paraguay). No master's degree; degree not yet completed.",
   
   // Education
   university: {
     name: "FP-UNA",
     fullName: "Facultad Politécnica - Universidad Nacional de Asunción",
+    degree: "Ingeniería Informática",
+    status: "Thesis in progress",
     url: "https://www.pol.una.py/"
   },
   
@@ -16,14 +18,14 @@ export const personalData = {
   email: "alejandrocabralvaldovinos@gmail.com",
   
   // Current status
-  currentStatus: "Student",
-  field: "Computer Science",
+  currentStatus: "Thesis in progress (Ingeniería Informática)",
+  field: "Ingeniería Informática",
   
   // Professional focus
   interests: [
-    "Software Development",
-    "Computer Science",
-    "Programming",
-    "Technology"
+    "Data Engineering",
+    "Lakehouse / Spark",
+    "Backend systems",
+    "Software development"
   ]
-}; 
+};
